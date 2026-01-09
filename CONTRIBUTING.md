@@ -1,106 +1,86 @@
+---
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
 # Contributing
 
-Contributions of all kinds are welcome here, and they are greatly appreciated!
-Every little bit helps, and credit will always be given.
+The following document outlines how each team member will contribute to
+the project on this repository, as a part of the UBC Master of Data
+Science program. Each member will follow the same guideline to ensure
+code quality, reproducibility and smooth collaboration.
 
-## Example Contributions
+## Collaboration Strategy
 
-You can contribute in many ways, for example:
+-   The `main` branch always contains stable and working code
+-   All work is done on `branches` created from `main`
+-   Changes are merged into `main` using a PR (Pull Request), which
+    should include:
+    -   at least one team member for review
+    -   a short description of what was changed
+    -   how it has to be tested
+-   After testing, the `branch` can be merged into `main` and can be
+    deleted to keep the repository clean.
 
-* [Report bugs](#report-bugs)
-* [Fix Bugs](#fix-bugs)
-* [Implement Features](#implement-features)
-* [Write Documentation](#write-documentation)
-* [Submit Feedback](#submit-feedback)
+### Branching
 
-### Report Bugs
+Each task is done on its own branch, and all the branches are deleted
+after being merged.
 
-Report bugs at https://github.com/jasjotp/ubc_mds_helper/issues.
+### Issues and Project Management
 
-**If you are reporting a bug, please follow the template guidelines. The more
-detailed your report, the easier and thus faster we can help you.**
+-   Github issues are used to plan, track and discuss work
+-   Issues are grouped according to Milestones
+-   Each issue is assigned to one team member
+-   Project boards are used to keep track of the progress
 
-### Fix Bugs
+### Commits
 
-Look through the GitHub issues for bugs. Anything labelled with `bug` and
-`help wanted` is open to whoever wants to implement it. When you decide to work on such
-an issue, please assign yourself to it and add a comment that you'll be working on that,
-too. If you see another issue without the `help wanted` label, just post a comment, the
-maintainers are usually happy for any support that they can get.
+Commits should be frequent and should clearly state how the solution was
+managed. All the contributors are expected to collect a comparable
+number of commits throughout the project.
 
-### Implement Features
+## Pull Requests
 
-Look through the GitHub issues for features. Anything labelled with
-`enhancement` and `help wanted` is open to whoever wants to implement it. As
-for [fixing bugs](#fix-bugs), please assign yourself to the issue and add a comment that
-you'll be working on that, too. If another enhancement catches your fancy, but it
-doesn't have the `help wanted` label, just post a comment, the maintainers are usually
-happy for any support that they can get.
+Changes are merged to `main` through a Pull Request. - PR should
+include: - brief description to changes - any relevant verification
+steps - Each PR should be assigned for review to at least one other team
+member - PR feedback should be commented before merging to `main`
 
-### Write Documentation
+## Getting Started
 
-ubc_mds_helper could always use more documentation, whether as
-part of the official documentation, in docstrings, or even on the web in blog
-posts, articles, and such. Just
-[open an issue](https://github.com/jasjotp/ubc_mds_helper/issues)
-to let us know what you will be working on so that we can provide you with guidance.
+### Clone the repository
 
-### Submit Feedback
+``` bash
+git clone <https://github.com/UBC-MDS/dsci524_group33.git>
+```
 
-The best way to send feedback is to file an issue at
-https://github.com/jasjotp/ubc_mds_helper/issues. If your feedback fits the format of one of
-the issue templates, please use that. Remember that this is a volunteer-driven
-project and everybody has limited time.
+### Create a new branch
 
-## Get Started!
+``` bash
+git switch -c <branch_name>
+```
 
-Ready to contribute? Here's how to set up ubc_mds_helper for
-local development.
+### Commit changes
 
-1. Fork the https://github.com/jasjotp/ubc_mds_helper
-   repository on GitHub.
-2. Clone your fork locally (*if you want to work locally*)
+``` bash
+git add <files> git commit -m "Add a brief and descriptive message"
+```
 
-    ```shell
-    git clone git@github.com:your_name_here/ubc_mds_helper.git
-    ```
+### Push changes to the branch
 
-3. [Install hatch](https://hatch.pypa.io/latest/install/).
+``` bash
+git push origin <branch_name>
+```
 
-4. Create a branch for local development using the default branch (typically `main`) as a starting point. Use `fix` or `feat` as a prefix for your branch name.
+### Create a PR
 
-    ```shell
-    git checkout main
-    git checkout -b fix-name-of-your-bugfix
-    ```
+Open a Pull Request on GitHub, link the issue, request a review from at
+least one teammate and address the feedback before merging.
 
-    Now you can make your changes locally.
+## Code of Conduct
 
-5. When you're done making changes, apply the quality assurance tools and check
-   that your changes pass our test suite. This is all included with tox
-
-    ```shell
-    hatch run test:run
-    ```
-
-6. Commit your changes and push your branch to GitHub. Please use [semantic
-   commit messages](https://www.conventionalcommits.org/).
-
-    ```shell
-    git add .
-    git commit -m "fix: summarize your changes"
-    git push -u origin fix-name-of-your-bugfix
-    ```
-
-7. Open the link displayed in the message when pushing your new branch in order
-   to submit a pull request.
-
-### Pull Request Guidelines
-
-Before you submit a pull request, check that it meets these guidelines:
-
-1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated. Put your
-   new functionality into a function with a docstring.
-3. Your pull request will automatically be checked by the full test suite.
-   It needs to pass all of them before it can be considered for merging.
+All the team members are expected to follow those guidelines to support
+an effective collaboration ([code of
+conduct](https://github.com/UBC-MDS/dsci524_group33/blob/main/CODE_OF_CONDUCT.md))
