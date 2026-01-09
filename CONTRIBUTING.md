@@ -79,7 +79,8 @@ git push origin <branch_name>
 Open a Pull Request on GitHub, link the issue, request a review from at
 least one teammate and address the feedback before merging.
 
-## Conclusion
+## Code of Conduct
 
 All the team members are expected to follow those guidelines to support
-an effective collaboration.
+an effective collaboration ([code of
+conduct](https://github.com/UBC-MDS/dsci524_group33/blob/main/CODE_OF_CONDUCT.md))
