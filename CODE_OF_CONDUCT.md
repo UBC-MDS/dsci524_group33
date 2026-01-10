@@ -10,7 +10,7 @@ Our goal is to ensure every member of this project feels safe, valued, and empow
 
 ### Expected Behaviour
 
-- All project members are expected to:
+All project members are expected to:
 
 - Treat all team members with respect, empathy, and professionalism
 
@@ -30,7 +30,7 @@ Our goal is to ensure every member of this project feels safe, valued, and empow
 
 ### Unacceptable Behaviour
 
-- The following behaviours will not be tolerated in this project:
+The following behaviours will not be tolerated in this project:
 
 - Harassment, bullying, or intimidation in any form
 
