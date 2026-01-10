@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # Contributing
 
 The following document outlines how each team member will contribute to
