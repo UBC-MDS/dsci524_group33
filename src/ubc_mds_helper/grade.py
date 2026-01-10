@@ -1,3 +1,11 @@
+"""
+A grade calculator Python module that helps UBC MDS students check what grades they need to get for remaining course components to pass.
+
+Author: Michael Kmetiuk
+
+Date: January 9, 2026
+"""
+
 def needed_to_pass(course_type: str, grades: dict) -> dict:
     """
     Calculate the minimum grades required on all remaining graded components
@@ -34,5 +42,7 @@ def needed_to_pass(course_type: str, grades: dict) -> dict:
             "lab4": 61.5,
             "quiz2": 61.5
         }
+
+
     """
     pass
