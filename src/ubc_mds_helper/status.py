@@ -10,6 +10,7 @@ def status(
     """
 
     Return program status for a given date.
+    
     If `days_missed` is a used argument, then program status will also return absence-related information.
 
     Parameters
