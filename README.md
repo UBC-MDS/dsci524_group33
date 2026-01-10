@@ -24,7 +24,7 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 "I have a family committment to go to on December 2-4th, 2025. Am I able to make it work based on positioning in the 6 week cycle?"
 
-"When is the next break and when is it reasonable to plan a holiday?"
+"When is the next break for me to plan my holiday?"
 
 "I failed the first quiz, and need to make sure I pass the course. What do I have to get on the second quiz?"
 
@@ -36,11 +36,17 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 1. Status()
 
+- A date and calendar-based Python module that describes position in the UBC MDS program and absence-related information.
+
 2. Late_assignments()
+
+- The function prints the submission status, the updated late count, and the scaling factor applied, and returns the scaled grade.
 
 3. Grade()
 
 4. Progression()
+
+- Visualizes program progress (in %) from a date to the capstone and program end date.
 
 ## Cycle Configuration
 
