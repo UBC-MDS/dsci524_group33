@@ -1,5 +1,9 @@
 """
 A date and calendar-based Python module that describes position in the UBC MDS program and absence-related information.
+
+Author: Ian Gault
+
+Date: January 9, 2026
 """
 
 def status(
