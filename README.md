@@ -44,6 +44,8 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 3. Grade()
 
+- A grade calculator Python module that helps UBC MDS students check what grades they need to get for remaining course components to pass.
+
 4. Progression()
 
 - Visualizes program progress (in %) from a date to the capstone and program end date.
@@ -69,7 +71,7 @@ To use ubc_mds_helper in your code:
 
 ```python
 >>> import ubc_mds_helper
->>> ubc_mds_helper.status(year, month, day, config)
+>>> ubc_mds_helper.status(config, date="Mar 20, 2026")
 ```
 
 ## Contributors
