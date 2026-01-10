@@ -1,130 +1,81 @@
-# Contributor Covenant Code of Conduct
+# GROUP 33 CODE OF CONDUCT
 
-## Our Pledge
+### Our Commitment to Diversity and Inclusivity
 
-We as members, contributors, and leaders pledge to make participation in our
-community a harassment-free experience for everyone, regardless of age, body
-size, visible or invisible disability, ethnicity, sex characteristics, gender
-identity and expression, level of experience, education, socio-economic status,
-nationality, personal appearance, race, religion, or sexual identity
-and orientation.
+As members of Group 33, working on the UBC MDS Helper, we are committed to building a collaborative, inclusive, and respectful environment. We welcome contributions from all team members regardless of background, identity, perspective, or experience.
 
-We pledge to act and interact in ways that contribute to an open, welcoming,
-diverse, inclusive, and healthy community.
+We believe that diversity strengthens teamwork and leads to more ethical and impactful data science outcomes.
 
-## Our Standards
+Our goal is to ensure every member of this project feels safe, valued, and empowered to contribute.
 
-Examples of behavior that contributes to a positive environment for our
-community include:
+### Expected Behaviour
 
-- Demonstrating empathy and kindness toward other people
-- Being respectful of differing opinions, viewpoints, and experiences
-- Giving and gracefully accepting constructive feedback
-- Accepting responsibility and apologizing to those affected by our mistakes,
-  and learning from the experience
-- Focusing on what is best not just for us as individuals, but for the
-  overall community
+- All project members are expected to:
 
-Examples of unacceptable behavior include:
+- Treat all team members with respect, empathy, and professionalism
 
-- The use of sexualized language or imagery, and sexual attention or
-  advances of any kind
-- Trolling, insulting or derogatory comments, and personal or political attacks
-- Public or private harassment
-- Publishing others' private information, such as a physical or email
-  address, without their explicit permission
-- Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+- Use inclusive, non-judgmental, and non-discriminatory language
 
-## Enforcement Responsibilities
+- Participate actively and communicate clearly
 
-Community leaders are responsible for clarifying and enforcing our standards of
-acceptable behavior and will take appropriate and fair corrective action in
-response to any behavior that they deem inappropriate, threatening, offensive,
-or harmful.
+- Collaborate constructively, especially when giving or receiving feedback
 
-Community leaders have the right and responsibility to remove, edit, or reject
-comments, commits, code, wiki edits, issues, and other contributions that are
-not aligned to this Code of Conduct, and will communicate reasons for moderation
-decisions when appropriate.
+- Honour project deadlines and communicate early when any challenges arise
 
-## Scope
+- Maintain data integrity, confidentiality, and ethical standards
 
-This Code of Conduct applies within all community spaces, and also applies when
-an individual is officially representing the community in public spaces.
-Examples of representing our community include using an official e-mail address,
-posting via an official social media account, or acting as an appointed
-representative at an online or offline event.
+- Ask questions openly and support one another’s learning
 
-## Enforcement
+- Take responsibility for their contributions to the project
 
-[//]: # (TODO: You need to choose whom and how to contact them.)
+### Unacceptable Behaviour
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at
-\[INSERT CONTACT METHOD\].
-All complaints will be reviewed and investigated promptly and fairly.
+- The following behaviours will not be tolerated in this project:
 
-All community leaders are obligated to respect the privacy and security of the
-reporter of any incident.
+- Harassment, bullying, or intimidation in any form
 
-## Enforcement Guidelines
+- Discriminatory comments, jokes, or actions
 
-Community leaders will follow these Community Impact Guidelines in determining
-the consequences for any action they deem in violation of this Code of Conduct:
+- Personal attacks, name-calling, or unprofessional tone
 
-### 1. Correction
+- Dismissing or belittling others’ ideas
 
-**Community Impact**: Use of inappropriate language or other behavior deemed
-unprofessional or unwelcome in the community.
+- Sharing confidential or sensitive information (including dataset privacy violations)
 
-**Consequence**: A private, written warning from community leaders, providing
-clarity around the nature of the violation and an explanation of why the
-behavior was inappropriate. A public apology may be requested.
+- Deliberately undermining project progress
 
-### 2. Warning
+- Inappropriate or offensive communication
 
-**Community Impact**: A violation through a single incident or series
-of actions.
+- Any behaviour that causes another team member to feel unsafe, excluded, or disrespected
 
-**Consequence**: A warning with consequences for continued behavior. No
-interaction with the people involved, including unsolicited interaction with
-those enforcing the Code of Conduct, for a specified period of time. This
-includes avoiding interactions in community spaces as well as external channels
-like social media. Violating these terms may lead to a temporary or
-permanent ban.
+### Reporting a Concern
 
-### 3. Temporary Ban
+If you experience or observe a violation of this Code of Conduct, please report it to:
 
-**Community Impact**: A serious violation of community standards, including
-sustained inappropriate behavior.
+- Any Group 33 member you feel comfortable approaching
 
-**Consequence**: A temporary ban from any sort of interaction or public
-communication with the community for a specified period of time. No public or
-private interaction with the people involved, including unsolicited interaction
-with those enforcing the Code of Conduct, is allowed during this period.
-Violating these terms may lead to a permanent ban.
+- The course TA or instructor if the issue cannot be resolved within the group
 
-### 4. Permanent Ban
+Reports should include:
 
-**Community Impact**: Demonstrating a pattern of violation of community
-standards, including sustained inappropriate behavior,  harassment of an
-individual, or aggression toward or disparagement of classes of individuals.
+- A description of the behaviour
 
-**Consequence**: A permanent ban from any sort of public interaction within
-the community.
+- When and where it occurred
 
-## Attribution
+- Individuals involved
 
-This Code of Conduct is adapted from the [Contributor Covenant][homepage],
-version 2.0, available at
-https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
+- Any evidence (screenshots, messages, etc.)
 
-Community Impact Guidelines were inspired by [Mozilla's code of conduct
-enforcement ladder](https://github.com/mozilla/diversity).
+All reports will be reviewed confidentially and with sensitivity.
 
-For answers to common questions about this code of conduct, see the FAQ at
-https://www.contributor-covenant.org/faq. Translations are available at
-https://www.contributor-covenant.org/translations.
+### Fostering a Positive and Supportive Team Culture
 
-[homepage]: https://www.contributor-covenant.org
+At Group 33, we want everyone to feel excited, motivated, and comfortable contributing. To create a supportive environment, we encourage:
+
+- **Celebrating contributions:** Recognize and appreciate the effort of every team member, no matter how small.
+
+- **Encouraging curiosity:** Ask questions freely — there are no “silly” questions when learning together.
+
+- **Sharing knowledge:** Help each other understand concepts, code, and data analysis techniques.
+
+- **Being patient and kind:** Everyone works at their own pace; respect each other’s learning journey.
