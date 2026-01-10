@@ -1,14 +1,21 @@
+"""
+The function prints the submission status of a lower-stake and 
+higher-stake assignment, the updated count, and the
+scaling factor applied, and returns the scaled grade, following the
+UBC MDS policy.
+
+Author: Valeria Siciliano
+
+Date: January 9, 2026
+"""
+
 def late_assignment(raw_grade, late_count, is_lower_stakes=False):
     """
-    Apply the late submission policy to an assessment and print the outcome.
-
     This function evaluates a late submission according to the program policy.
     For higher-stakes assessments, the grade is scaled based on the cumulative
     number of late submissions. For lower-stakes assessments, late submissions
     are not accepted and receive a grade of zero.
 
-    The function prints the submission status, the updated late count, and the
-    scaling factor applied, and returns the scaled grade.
 
     Parameters
     ----------
