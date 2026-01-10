@@ -1,6 +1,10 @@
 """
 A date and calendar-based Python module that helps UBC MDS students check specific 
-program level details using UBC MDS specific dates defined in one place.
+program level details using UBC MDS specific dates using a config file containing dates.
+
+Author: Jasjot Parmar
+
+Date: January 9, 2026
 """
 
 def visualize_program_progress(
@@ -20,11 +24,11 @@ def visualize_program_progress(
     current_date : str or Python datetime object, optional
         Date at which visualize progress from. If None, defaults to today's date.
     program_start_date : str or Python datetime object, optional
-        Start date of UBC MDS Program. If None, defaults to configured start date of UBC MDS program (2025 - 2026). 
+        Start date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026['program_start']. 
     program_end_date : str or Python datetime object, optional
-        End date of UBC MDS Program. If None, defaults to configured end date of UBC MDS program (2025 - 2026). 
+        End date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026['program_end']. 
     capstone_start_date : str or Python datetime object, optional
-        Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project (2025 - 2026). 
+        Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026['capstone']['start']. 
     
     Returns
     -------
