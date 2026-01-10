@@ -8,7 +8,46 @@
 *TODO: the above badges that indicate python version and package version will only work if your package is on PyPI.
 If you don't plan to publish to PyPI, you can remove them.*
 
-ubc_mds_helper is a project that (describe what it does here).
+## Project Purpose
+
+ubc_mds_helper is a project that helps students in the UBC Masters of Data Science (MDS) program better understand and plan their academic timeline.
+
+The MDS program follows 6 blocks of instruction, each consisting of 4 courses delivered over a standard cycle of 5 weeks. At the end of the 6 blocks, a 2 month capstones project is required to complete the program, resulting in a total program length of 10 months.
+
+With the large number of deadlines and the variability in workload across the 5 weeks within each block, it is difficult for students to get a sense of where they are in the program at a given time. This helper package provides date-based tools to describe a student's academic position, program phase, and progress, and support planning for personal commitments, absences, late submissions, and meeting course-level requirements. 
+
+This helper is based on a program cofiguration for the 2025/2026 cohort, and would need to be adapted for other program cycles.
+
+There is no package that is specific to the MDS program. However, we will be using the python standard library of datetime and calendar to streamline date calculations and interpretations.
+
+### Use case examples
+
+"I have a family committment to go to on December 2-4th, 2025. Am I able to make it work based on positioning in the 6 week cycle?"
+
+"When is the next break and when is it reasonable to plan a holiday?"
+
+"I failed the first quiz, and need to make sure I pass the course. What do I have to get on the second quiz?"
+
+"I already have 2 late assignments. What penalty will I receive on the next late assignment?"
+
+"I'm a visual learner - what is my progress?"
+
+## Functions
+
+1. Status()
+
+2. Late_assignments()
+
+3. Grade()
+
+4. Progression()
+
+## Cycle Configuration
+
+*config.py*
+
+- Program info to be adjusted based on cohort cycle
+- This config file will be an arugment in some of relevant functions so that the hardcoding can be set in the config file and not in the functions themselves.
 
 ## Get started
 
@@ -24,8 +63,12 @@ To use ubc_mds_helper in your code:
 
 ```python
 >>> import ubc_mds_helper
->>> ubc_mds_helper.hello_world()
+>>> ubc_mds_helper.status(year, month, day, config)
 ```
+
+## Contributors
+
+Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar, Ian Gault
 
 ## Copyright
 
