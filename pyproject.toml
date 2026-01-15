@@ -36,7 +36,9 @@ classifiers = [
 # TODO: add keywords
 keywords = []
 # TODO: add dependencies
-dependencies = []
+dependencies = [
+    "matplotlib>=3.10.8"
+]
 
 [project.urls]
 Homepage = "https://github.com/jasjotp/ubc_mds_helper"
