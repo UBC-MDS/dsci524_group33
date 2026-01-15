@@ -5,6 +5,7 @@ from datetime import date
 
 from ubc_mds_helper.progress import visualize_program_progress
 from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
+from ubc_mds_helper.helper_functions import progress_percentage
 
 # test that function raises an error if one of the dates passed in are not a date object or string
 # got syntax help with validating the exception message from the Assertions about expected exceptions section from PyTest docs: https://docs.pytest.org/en/7.1.x/how-to/assert.html
@@ -51,3 +52,30 @@ def test_curr_date_before_program_start():
     # capstone_progress_percentage AND completion_percentage should both return 0, as if the current date is set to before the program start date, there are negative elapsd days, which is clipped to [0, 1]
     assert capstone_progess_percentage == 0
     assert completion_percentage == 0
+
+# if there are no dates passed in, the current date should default to today's date and calculate the progress from the default program_start_date, program_end_date, and capstone_start_date in config.py 
+def test_no_parameters():
+    capstone_progess_percentage, completion_percentage = visualize_program_progress()
+
+    # set the current date and grab the program_start_date, program_end_date and capstone_start_date from config 
+    current_date = date.today()
+    program_start_date = PROGRAM_CONFIG_2025_2026['program_start']
+    program_end_date = PROGRAM_CONFIG_2025_2026['program_end']
+    capstone_start_date = PROGRAM_CONFIG_2025_2026['capstone']['start']
+
+    # caluclate the manual capstone_progress_percentage and manual completion_percentage from today's date, and the default dates from the config file
+    manual_capstone_progress = progress_percentage(
+        program_start_date,
+        current_date,
+        capstone_start_date
+    )
+
+    manual_completion_progress = progress_percentage(
+        program_start_date,
+        current_date,
+        program_end_date
+    )
+
+    # assert if the manual capstone_progress_percentage and manual completion_percentage are equal to the capstone_progress_percentage and completion_percentage after passing in no paraeeters
+    assert manual_capstone_progress == capstone_progess_percentage
+    assert manual_completion_progress == completion_percentage
