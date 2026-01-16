@@ -67,6 +67,7 @@ def status(
     # Normalizes the dates that are passed in: if argument is a datetime.date, return date; if string, try to convert it to an accepted datetime format or throw an error
     date_input = normalize_date(date_input)
 
+    # Test if date_input is within the program bounds
     if date_input < config['program_start'] or date_input > config['program_end']:
         raise ValueError("Entered date is not within the 2025-2026 MDS program cycle")
 
@@ -84,10 +85,12 @@ def status(
     # --- BLOCK ---
     # NOTE: Through iterative testing, realized that the first block first week starts on a Friday, and the first week of block 1 actually runs for 9 days. I asked ChatGPT5 how to implement this, and the code was updated as below.
 
+    # Determining block and week in block based on input date
     for b in config['blocks']:
         if b['start'] <= date_input <= b['end']:
             block = b['block']
             if block == 1:
+                # Unique timeframe for block 1
                 first_week_end = b['start'] + timedelta(days=9)
                 if date_input <= first_week_end:
                     week_in_block = 1
@@ -96,6 +99,7 @@ def status(
                     week_start = date_input - timedelta(days=date_input.weekday())
                     week_in_block = ((week_start - block_week_start).days // 7) + 2
             else:
+                # For blocks other than block 1
                 block_week_start = b['start'] - timedelta(days=b['start'].weekday())
                 week_start = date_input - timedelta(days=date_input.weekday())
                 week_in_block = ((week_start - block_week_start).days // 7) + 1
@@ -117,6 +121,7 @@ def status(
         days_until_next_break = (next_break['start'] - date_input).days
         next_break_name = next_break['name']
 
+    # Caveat for if it's not an official or extended break, but a weekend that students are off between blocks
     if block is None and not during_break:
         between_blocks = True
 
