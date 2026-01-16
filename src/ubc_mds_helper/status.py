@@ -58,7 +58,8 @@ def status(
 
     """
 
-    # if the date passed in are None, retrieve them from PROGRAM_CONFIG_2025_2026 in config.py
+    # --- DATE ---
+    # If the date passed in are None, retrieve them from PROGRAM_CONFIG_2025_2026 in config.py
     if date_input is None:
         date_input = date.today()
 
@@ -69,7 +70,7 @@ def status(
     if date_input < config['program_start'] or date_input > config['program_end']:
         raise ValueError("Entered date is not within the 2025-2026 MDS program cycle")
 
-    # Initialize the metrics to None
+    # --- INITIALIZE ---
     block = None
     week_in_block = None
     during_break = False
@@ -78,7 +79,7 @@ def status(
     next_break_name = None
     between_blocks = False
 
-    # NOTE: ChatGPT5 helped correct my code below to effectively get the block and break infomation into the return dictionary.
+    # NOTE: ChatGPT5 helped correct my code below to effectively get the BLOCK and BREAK infomation into the returned dictionary.
 
     # --- BLOCK ---
     # NOTE: Through iterative testing, realized that the first block first week starts on a Friday, and the first week of block 1 actually runs for 9 days. I asked ChatGPT5 how to implement this, and the code was updated as below.
@@ -101,12 +102,14 @@ def status(
             break
 
     # --- BREAK ---
+    # Update Break general info
     for br in config['breaks']:
         if br['start'] <= date_input <= br['end']:
             during_break = True
             break_name = br['name']
             break
-
+    
+    # Assessment of upcoming breaks and days until it starts
     upcoming_breaks = [br for br in config['breaks'] if br['start'] > date_input]
 
     if upcoming_breaks:
@@ -117,6 +120,7 @@ def status(
     if block is None and not during_break:
         between_blocks = True
 
+    # RETURN the dictionary of metrics
     return {
         "date": date_input,
         "day_of_week": date_input.strftime("%A"),
