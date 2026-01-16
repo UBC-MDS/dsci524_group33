@@ -6,10 +6,9 @@ Author: Ian Gault
 Date: January 9, 2026
 """
 
-from datetime import datetime, date
-from config import PROGRAM_CONFIG_2025_2026
-from helper_functions import normalize_date
-
+from datetime import date, timedelta
+from .config import PROGRAM_CONFIG_2025_2026
+from .helper_functions import normalize_date
 
 def status(
     config,
@@ -33,10 +32,16 @@ def status(
         Dictionary will be returned descibing academic position based on date.
         Dictionary is printed out in the console for viewing
 
+            DATE: general information on the input date
+
+            BLOCK: calculates which block you are in and the week within the block
+
+            BREAK: determines if you're in a block or on holidays; if you are in a block, will tell you the next upcoming break and how far away it is; disingtuishes between holidays and weekends between blocks
+
     Examples
     --------
     >>> status(config)
-    
+
     Displays program status from today's date.
 
     result = {
@@ -47,7 +52,8 @@ def status(
         "during_break": False,
         "break_name": None,
         "days_until_next_break": None,
-        "next_break_name": None
+        "next_break_name": None,
+        "between_blocks" = False
     }
 
     """
@@ -56,21 +62,76 @@ def status(
     if date_input is None:
         date_input = date.today()
 
-    # normalize the dates that are passed in: if argument is a datetime.date, return date; if string, try to convert it to an accepted datetime format or throw an error
+    # normalize_data() taken from progress.py:
+    # Normalizes the dates that are passed in: if argument is a datetime.date, return date; if string, try to convert it to an accepted datetime format or throw an error
     date_input = normalize_date(date_input)
+
+    if date_input < config['program_start'] or date_input > config['program_end']:
+        raise ValueError("Entered date is not within the 2025-2026 MDS program cycle")
+
+    # Initialize the metrics to None
+    block = None
+    week_in_block = None
+    during_break = False
+    break_name = None
+    days_until_next_break = None
+    next_break_name = None
+    between_blocks = False
+
+    # NOTE: ChatGPT5 helped correct my code below to effectively get the block and break infomation into the return dictionary.
+
+    # --- BLOCK ---
+    # NOTE: Through iterative testing, realized that the first block first week starts on a Friday, and the first week of block 1 actually runs for 9 days. I asked ChatGPT5 how to implement this, and the code was updated as below.
+
+    for b in config['blocks']:
+        if b['start'] <= date_input <= b['end']:
+            block = b['block']
+            if block == 1:
+                first_week_end = b['start'] + timedelta(days=9)
+                if date_input <= first_week_end:
+                    week_in_block = 1
+                else:
+                    block_week_start = first_week_end + timedelta(days=1)
+                    week_start = date_input - timedelta(days=date_input.weekday())
+                    week_in_block = ((week_start - block_week_start).days // 7) + 2
+            else:
+                block_week_start = b['start'] - timedelta(days=b['start'].weekday())
+                week_start = date_input - timedelta(days=date_input.weekday())
+                week_in_block = ((week_start - block_week_start).days // 7) + 1
+            break
+
+    # --- BREAK ---
+    for br in config['breaks']:
+        if br['start'] <= date_input <= br['end']:
+            during_break = True
+            break_name = br['name']
+            break
+
+    upcoming_breaks = [br for br in config['breaks'] if br['start'] > date_input]
+
+    if upcoming_breaks:
+        next_break = min(upcoming_breaks, key=lambda br: br['start'])
+        days_until_next_break = (next_break['start'] - date_input).days
+        next_break_name = next_break['name']
+
+    if block is None and not during_break:
+        between_blocks = True
 
     return {
         "date": date_input,
         "day_of_week": date_input.strftime("%A"),
-        "block": None,
-        "week_in_block": None,
-        "during_break": False,
-        "break_name": None,
-        "days_until_next_break": None,
-        "next_break_name": None,
+        "block": block,
+        "week_in_block": week_in_block,
+        "during_break": during_break,
+        "break_name": break_name,
+        "days_until_next_break": days_until_next_break,
+        "next_break_name": next_break_name,
+        "between_blocks": between_blocks,
     }
 
-output = status(PROGRAM_CONFIG_2025_2026, "Feb 8, 2026")
+# Test output of status()
+if __name__ == "__main__":
+    output = status(PROGRAM_CONFIG_2025_2026)
 
-for key, value in output.items():
-    print(f"{key}: {value}")
+    for key, value in output.items():
+        print(f"{key}: {value}")
