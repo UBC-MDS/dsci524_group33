@@ -186,3 +186,7 @@ features = [
 
 [tool.hatch.envs.audit.scripts]
 check = ["pip-audit"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.2"
+

@@ -7,6 +7,9 @@ Date: January 9, 2026
 """
 
 def needed_to_pass(course_type: str, grades: dict) -> dict:
+    if course_type not in {"quiz", "project"}:
+        raise ValueError("course_type must be 'quiz' or 'project'")
+    
     """
     Calculate the minimum grades required on all remaining graded components
     for a student to achieve a final grade of 60% and pass the course.
