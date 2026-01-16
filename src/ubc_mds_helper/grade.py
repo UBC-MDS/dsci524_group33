@@ -74,7 +74,6 @@ def needed_to_pass(course_type: str, grades: dict) -> dict:
 
         - "quiz": Course with 4 labs worth 12.5% each and 2 quizes worth 25% each
         - "project": Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each
-
     grades : dict
         A dictionary of submitted compon4ents and their related grades.
 

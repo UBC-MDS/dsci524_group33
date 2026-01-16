@@ -781,10 +781,9 @@ test-no-images = ["pytest", "pytest-cov", "pytest-rerunfailures", "pytest-xdist"
 name = "coverage"
 version = "7.13.1"
 description = "Code coverage measurement for Python"
-optional = true
+optional = false
 python-versions = ">=3.10"
-groups = ["main"]
-markers = "extra == \"tests\""
+groups = ["main", "dev"]
 files = [
     {file = "coverage-7.13.1-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:e1fa280b3ad78eea5be86f94f461c04943d942697e0dac889fa18fff8f5f9147"},
     {file = "coverage-7.13.1-cp310-cp310-macosx_11_0_arm64.whl", hash = "sha256:c3d8c679607220979434f494b139dfb00131ebf70bb406553d69c1ff01a5c33d"},
@@ -2796,10 +2795,9 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "requests
 name = "pytest-cov"
 version = "7.0.0"
 description = "Pytest plugin for measuring coverage."
-optional = true
+optional = false
 python-versions = ">=3.9"
-groups = ["main"]
-markers = "extra == \"tests\""
+groups = ["main", "dev"]
 files = [
     {file = "pytest_cov-7.0.0-py3-none-any.whl", hash = "sha256:3b8e9558b16cc1479da72058bdecf8073661c7f57f7d3c5f22a1c23507f2d861"},
     {file = "pytest_cov-7.0.0.tar.gz", hash = "sha256:33c97eda2e049a0c5298e91f519302a1334c26ac65c1a483d6206fd458361af1"},
@@ -3579,7 +3577,7 @@ files = [
     {file = "tomli-2.4.0-py3-none-any.whl", hash = "sha256:1f776e7d669ebceb01dee46484485f43a4048746235e683bcdffacdf1fb4785a"},
     {file = "tomli-2.4.0.tar.gz", hash = "sha256:aa89c3f6c277dd275d8e243ad24f3b5e701491a860d5121f2cdd399fbb31fc9c"},
 ]
-markers = {main = "python_version == \"3.10\" or extra == \"build\" and python_version < \"3.12\" or extra == \"tests\" and python_full_version <= \"3.11.0a6\"", dev = "python_version == \"3.10\""}
+markers = {main = "python_full_version <= \"3.11.0a6\" or extra == \"build\" and python_version < \"3.12\"", dev = "python_full_version <= \"3.11.0a6\""}
 
 [[package]]
 name = "tomli-w"
@@ -4007,4 +4005,4 @@ tests = ["pytest", "pytest-cov", "pytest-raises", "pytest-randomly", "pytest-xdi
 [metadata]
 lock-version = "2.1"
 python-versions = ">= 3.10"
-content-hash = "1de93c4bd1e127e5bf4e3d07016fe4e609bb5c798df4b3cd7c3647a7cc4defae"
+content-hash = "3d93f9849a195cfc3a6d0f370e83737b3712ae336821f18f1be25b4ee1a99467"

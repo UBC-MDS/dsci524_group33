@@ -14,3 +14,8 @@ def test_unknown_component():
 def test_out_of_range_grade():
     with pytest.raises(ValueError):
         needed_to_pass("project", {"Milestone1":120})  
+def test_quiz_math_case():
+    result = needed_to_pass("quiz", {"lab1": 80})
+    expected = pytest.approx(57.142857, abs=1e-3)
+    for k in ["lab2", "lab3", "lab4", "quiz1", "quiz2"]:
+        assert result[k] == expected
