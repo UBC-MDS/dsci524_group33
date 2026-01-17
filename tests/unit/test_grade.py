@@ -1,3 +1,11 @@
+"""
+Test script for the grade.py function
+
+Author: Michael Kmetiuk
+
+Date: January 15, 2026
+"""
+
 import pytest
 from ubc_mds_helper.grade import needed_to_pass
 

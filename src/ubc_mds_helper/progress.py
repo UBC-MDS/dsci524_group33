@@ -131,8 +131,9 @@ def visualize_program_progress(
 
     return capstone_progress_percentage, completion_percentage
 
-capstone_progress_percentage, completion_percentage = visualize_program_progress(
-    current_date = PROGRAM_CONFIG_2025_2026['program_start']
-)
+if __name__ == "__main__":
+    capstone_progress_percentage, completion_percentage = visualize_program_progress(
+        current_date = PROGRAM_CONFIG_2025_2026['program_start']
+    )
 
-print(capstone_progress_percentage, completion_percentage)
+    print(capstone_progress_percentage, completion_percentage)

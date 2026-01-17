@@ -36,7 +36,7 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 1. Status()
 
-- A date and calendar-based Python module that describes position in the UBC MDS program and absence-related information.
+- A date and calendar-based Python module that describes position in the UBC MDS program.
 
 2. Late_assignments()
 
