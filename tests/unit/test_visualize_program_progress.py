@@ -1,3 +1,11 @@
+"""
+Test script for the progress.py function
+
+Author: Jasjot Parmar
+
+Date: January 15, 2026
+"""
+
 import sys 
 import os 
 import pytest 
@@ -21,7 +29,7 @@ def test_non_date_str_parameter():
     # make sure the exception message matches our exception message passed in 
     assert "must be a Python datetime.date or str object" in str(exception_info.value)
 
-# when the current date is equal to the program start date, the program and capstone progress should return 0 
+# when the current date is equal to the program start date, the program and capstone progress should return 0
 def test_curr_date_equals_end():
     capstone_progess_percentage, completion_percentage = visualize_program_progress(current_date = PROGRAM_CONFIG_2025_2026['program_start'])
 
@@ -29,7 +37,7 @@ def test_curr_date_equals_end():
     assert capstone_progess_percentage == 0 
     assert completion_percentage == 0 
 
-# when the currnt date is equal to the capstone start date, capstone progress should be 1 
+# when the currnt date is equal to the capstone start date, capstone progress should be 1
 def test_curr_date_equals_capstone():
     capstone_progess_percentage, completion_percentage = visualize_program_progress(current_date = PROGRAM_CONFIG_2025_2026['capstone']['start'])
 
@@ -53,7 +61,7 @@ def test_curr_date_before_program_start():
     assert capstone_progess_percentage == 0
     assert completion_percentage == 0
 
-# if there are no dates passed in, the current date should default to today's date and calculate the progress from the default program_start_date, program_end_date, and capstone_start_date in config.py 
+# if there are no dates passed in, the current date should default to today's date and calculate the progress from the default program_start_date, program_end_date, and capstone_start_date in config.py
 def test_no_parameters():
     capstone_progess_percentage, completion_percentage = visualize_program_progress()
 
