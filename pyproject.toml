@@ -153,7 +153,7 @@ features = [
 ]
 
 [[tool.hatch.envs.test.matrix]]
-python = ["3.11"]
+python = ["3.11", "3.12", "3.13"]
 
 [tool.hatch.envs.test.scripts]
 run = "pytest {args:--cov=ubc_mds_helper --cov-report=term-missing --cov-report=xml}"
