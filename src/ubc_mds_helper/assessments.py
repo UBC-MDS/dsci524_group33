@@ -41,7 +41,25 @@ def late_assignment(raw_grade, late_count, is_lower_stakes=False):
 
     Late submissions for lower-stakes assessments do not count toward the
     cumulative late count and always receive 0 points.
+    
+    Examples
+    --------
+    Higher-stakes assignment, first late submission:
+    >>> late_assignment(80, 0)
+    Status: Late (1st occurrence)
+    Late count: 1
+    Scaling factor: 0.75
+    60.0
+    
+    Lower-stakes assignment, any late submission:
+    >>> late_assignment(90, 2, is_lower_stakes=True)
+    Status: Late not accepted (lower-stakes)
+    Late count: 2
+    Scaling factor: 0.0
+    0.0
+    0.0
     """
+    
     if late_count < 0:
         raise ValueError("late_count must be a non-negative integer.")    
     if is_lower_stakes:
