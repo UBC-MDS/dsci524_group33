@@ -7,7 +7,6 @@ Date: January 15, 2026
 """
 import pytest 
 from datetime import date
-
 from ubc_mds_helper.progress import visualize_program_progress
 from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
 from ubc_mds_helper.helper_functions import progress_percentage
