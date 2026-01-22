@@ -6,7 +6,6 @@ Author: Jasjot Parmar
 
 Date: January 9, 2026
 """
-
 from datetime import date
 from .config import PROGRAM_CONFIG_2025_2026
 from .helper_functions import normalize_date, progress_percentage
