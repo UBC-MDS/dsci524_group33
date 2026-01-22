@@ -6,6 +6,7 @@ Author: Jasjot Parmar
 
 Date: January 9, 2026
 """
+
 from datetime import date
 from .config import PROGRAM_CONFIG_2025_2026
 from .helper_functions import normalize_date, progress_percentage
@@ -56,7 +57,7 @@ def visualize_program_progress(
                                 )
     Saves bar chart with progress towards the capstone start date (April 24, 2026) and end of the program (June 30, 2026) from today's date (August 26, 2025).
     """
-    
+
     # if the date passed in are None, retrieve them from PROGRAM_CONFIG_2025_2026 in config.py
     if current_date is None:
         current_date = date.today()
