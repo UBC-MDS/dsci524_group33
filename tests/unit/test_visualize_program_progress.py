@@ -5,9 +5,6 @@ Author: Jasjot Parmar
 
 Date: January 15, 2026
 """
-
-import sys 
-import os 
 import pytest 
 from datetime import date
 
