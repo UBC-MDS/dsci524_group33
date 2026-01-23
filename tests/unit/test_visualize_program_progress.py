@@ -16,10 +16,10 @@ from ubc_mds_helper.helper_functions import progress_percentage
 def test_non_date_str_parameter():
     with pytest.raises(TypeError) as exception_info:
         visualize_program_progress(
-        date.today(), 
-        'August 26, 2025', 
-        'June 30, 2026', 
-        1
+            date.today(), 
+            'August 26, 2025', 
+            'June 30, 2026', 
+            1
     )
         
     # make sure the exception message matches our exception message passed in 
@@ -83,3 +83,13 @@ def test_no_parameters():
     # assert if the manual capstone_progress_percentage and manual completion_percentage are equal to the capstone_progress_percentage and completion_percentage after passing in no paraeeters
     assert manual_capstone_progress == capstone_progess_percentage
     assert manual_completion_progress == completion_percentage
+
+# test that there is a ValueError if the string passed in is not able to be conerted to a date
+def test_invalid_date_string():
+
+    with pytest.raises(ValueError):
+        visualize_program_progress(
+            'not-a-real-date', 
+            'August 26, 2025', 
+            'June 30, 2026'
+        )
