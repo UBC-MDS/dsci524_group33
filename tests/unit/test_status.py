@@ -36,7 +36,7 @@ def test_out_of_bounds():
         exception_info.value
     )
 
-def between_block_test():
+def test_between_block():
     '''Tests the logic for determining if the date is between blocks but not an official holiday break'''
     result = status(PROGRAM_CONFIG_2025_2026, "Feb 7, 2026")
     assert result['block'] == None
@@ -47,6 +47,15 @@ def test_today():
     '''Tests to make sure the date.today() is working proporly as a default date'''
     result = status(PROGRAM_CONFIG_2025_2026)
     assert result['date'] == date.today()
+
+def test_during_break():
+    '''Test to make sure the metrics are correct duing a break'''
+    result = status(PROGRAM_CONFIG_2025_2026, "Nov 10, 2025")
+    assert result['during_break'] is True
+    assert result['break_name'] == "Fall break"
+    assert result['block'] is None
+    assert result['week_in_block'] is None
+    assert result['between_blocks'] is False
 
 # NOTE: asked ChatGPT5 how to get up an integration function based on unit tests and main function
 def test_status_integration():
