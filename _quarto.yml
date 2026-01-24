@@ -7,7 +7,7 @@ website:
   navbar:
     left:
       - text: "Reference"
-        href: reference/index.qmd
+        href: reference/api/index.qmd
 
 format:
   html:
@@ -16,7 +16,7 @@ format:
 
 quartodoc:
   package: ubc_mds_helper
-  dir: reference
+  dir: reference/api
   sections:
     - title: UBC MDS Helper
       desc: Functions to help you survive in the MDS program.

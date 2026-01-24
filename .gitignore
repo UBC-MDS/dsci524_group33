@@ -159,6 +159,7 @@ _site/
 
 # Quartodoc
 objects.json
+reference/api/
 
 # PyBuilder
 .pybuilder/
