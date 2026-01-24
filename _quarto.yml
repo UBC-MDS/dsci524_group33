@@ -1,14 +1,29 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - reference/index.qmd
+    - reference/api/index.qmd
+    - reference/api/*.qmd
+    - CODE_OF_CONDUCT.md
+    - CONTRIBUTING.md
 
 website:
   title: "ubc_mds_helper"
   navbar:
     left:
+      - text: "Home"
+        href: index.qmd
       - text: "Reference"
         href: reference/api/index.qmd
-
+      - text: "Project"
+        menu:
+          - text: "Contributing"
+            href: CONTRIBUTING.md
+          - text: "Code of Conduct"
+            href: CODE_OF_CONDUCT.md
+        
 format:
   html:
     theme: cosmo
