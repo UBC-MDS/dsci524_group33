@@ -20,23 +20,23 @@ def status(
 
     Parameters
     ----------
-    config : from the config.py file
+    config : config.py
         Contains program date information, block structure, and break periods.
-    date_input : str or Python datetime object, optional
+    date_input : str or Python datetime object
         Date at which program status is based upon.
         If None, defaults to today's date.
 
     Returns
     -------
-    Dict
+    result : dict
         Dictionary will be returned descibing academic position based on date.
-        Dictionary is printed out in the console for viewing
+        Dictionary is printed out in the console for viewing. 
 
-            DATE: general information on the input date
+            DATE: general information on the input date. 
 
-            BLOCK: calculates which block you are in and the week within the block
+            BLOCK: calculates which block you are in and the week within the block. 
 
-            BREAK: determines if you're in a block or on holidays; if you are in a block, will tell you the next upcoming break and how far away it is; disingtuishes between holidays and weekends between blocks
+            BREAK: determines if you're in a block or on holidays; if you are in a block, will tell you the next upcoming break and how far away it is; disingtuishes between holidays and weekends between blocks.
 
     Examples
     --------

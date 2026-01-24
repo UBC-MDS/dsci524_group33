@@ -152,9 +152,14 @@ instance/
 # Scrapy stuff:
 .scrapy
 
-# Sphinx documentation
-docs/_build/
-docs/api
+# Quartodoc documentation
+.quarto/
+docs/
+_site/
+
+# Quartodoc
+objects.json
+reference/api/
 
 # PyBuilder
 .pybuilder/
@@ -243,3 +248,5 @@ cython_debug/
 
 # Hatch-VCS
 _version.py
+
+/.quarto/

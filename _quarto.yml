@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "ubc_mds_helper"
+  navbar:
+    left:
+      - text: "Reference"
+        href: reference/api/index.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+
+quartodoc:
+  package: ubc_mds_helper
+  dir: reference/api
+  sections:
+    - title: UBC MDS Helper
+      desc: Functions to help you survive in the MDS program.
+      contents:
+        - assessments.late_assignment
+        - grade.needed_to_pass
+        - progress.visualize_program_progress
+        - status.status
