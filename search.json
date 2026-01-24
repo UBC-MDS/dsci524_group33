@@ -1,110 +1,5 @@
 [
   {
-    "objectID": "CODE_OF_CONDUCT.html",
-    "href": "CODE_OF_CONDUCT.html",
-    "title": "GROUP 33 CODE OF CONDUCT",
-    "section": "",
-    "text": "GROUP 33 CODE OF CONDUCT\n\nOur Commitment to Diversity and Inclusivity\nAs members of Group 33, working on the UBC MDS Helper, we are committed to building a collaborative, inclusive, and respectful environment. We welcome contributions from all team members regardless of background, identity, perspective, or experience.\nWe believe that diversity strengthens teamwork and leads to more ethical and impactful data science outcomes.\nOur goal is to ensure every member of this project feels safe, valued, and empowered to contribute.\n\n\nExpected Behaviour\nAll project members are expected to:\n\nTreat all team members with respect, empathy, and professionalism\nUse inclusive, non-judgmental, and non-discriminatory language\nParticipate actively and communicate clearly\nCollaborate constructively, especially when giving or receiving feedback\nHonour project deadlines and communicate early when any challenges arise\nMaintain data integrity, confidentiality, and ethical standards\nAsk questions openly and support one another’s learning\nTake responsibility for their contributions to the project\n\n\n\nUnacceptable Behaviour\nThe following behaviours will not be tolerated in this project:\n\nHarassment, bullying, or intimidation in any form\nDiscriminatory comments, jokes, or actions\nPersonal attacks, name-calling, or unprofessional tone\nDismissing or belittling others’ ideas\nSharing confidential or sensitive information (including dataset privacy violations)\nDeliberately undermining project progress\nInappropriate or offensive communication\nAny behaviour that causes another team member to feel unsafe, excluded, or disrespected\n\n\n\nReporting a Concern\nIf you experience or observe a violation of this Code of Conduct, please report it to:\n\nAny Group 33 member you feel comfortable approaching\nThe course TA or instructor if the issue cannot be resolved within the group\n\nReports should include:\n\nA description of the behaviour\nWhen and where it occurred\nIndividuals involved\nAny evidence (screenshots, messages, etc.)\n\nAll reports will be reviewed confidentially and with sensitivity.\n\n\nFostering a Positive and Supportive Team Culture\nAt Group 33, we want everyone to feel excited, motivated, and comfortable contributing. To create a supportive environment, we encourage:\n\nCelebrating contributions: Recognize and appreciate the effort of every team member, no matter how small.\nEncouraging curiosity: Ask questions freely — there are no “silly” questions when learning together.\nSharing knowledge: Help each other understand concepts, code, and data analysis techniques.\nBeing patient and kind: Everyone works at their own pace; respect each other’s learning journey."
-  },
-  {
-    "objectID": "reference/api/progress.visualize_program_progress.html",
-    "href": "reference/api/progress.visualize_program_progress.html",
-    "title": "progress.visualize_program_progress",
-    "section": "",
-    "text": "progress.visualize_program_progress(\n    current_date=None,\n    program_start_date=None,\n    program_end_date=None,\n    capstone_start_date=None,\n)\nVisualizes program progress (in %) from a date to the capstone and program end date.\nCalculates the percentage of elapsed time between the program start date to the capstone start date and program end date of the UBC MDS program, and visualizes the result as a bar chart.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncurrent_date\nstr or Python datetime object\nDate at which to visualize progress from. If None, defaults to today’s date.\nNone\n\n\nprogram_start_date\nstr or Python datetime object\nStart date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’].\nNone\n\n\nprogram_end_date\nstr or Python datetime object\nEnd date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’].\nNone\n\n\ncapstone_start_date\nstr or Python datetime object\nStart date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ncapstone_progress_percentage, completion_percentage : floats\nThis function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the img/ directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program.\n\n\n\n\n\n\n&gt;&gt;&gt; visualize_program_progress()\nSaves bar chart with progress towards the capstone and end of the program from today's date.\n&gt;&gt;&gt; visualize_program_progress('January 1, 2026', \n...                             'August 26, 2025', \n...                             'June 30, 2026', \n...                             'April 24, 2026'\n                            )\nSaves bar chart with progress towards the capstone start date (April 24, 2026) and end of the program (June 30, 2026) from today's date (August 26, 2025)."
-  },
-  {
-    "objectID": "reference/api/progress.visualize_program_progress.html#parameters",
-    "href": "reference/api/progress.visualize_program_progress.html#parameters",
-    "title": "progress.visualize_program_progress",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncurrent_date\nstr or Python datetime object\nDate at which to visualize progress from. If None, defaults to today’s date.\nNone\n\n\nprogram_start_date\nstr or Python datetime object\nStart date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’].\nNone\n\n\nprogram_end_date\nstr or Python datetime object\nEnd date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’].\nNone\n\n\ncapstone_start_date\nstr or Python datetime object\nStart date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].\nNone"
-  },
-  {
-    "objectID": "reference/api/progress.visualize_program_progress.html#returns",
-    "href": "reference/api/progress.visualize_program_progress.html#returns",
-    "title": "progress.visualize_program_progress",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\ncapstone_progress_percentage, completion_percentage : floats\nThis function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the img/ directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program."
-  },
-  {
-    "objectID": "reference/api/progress.visualize_program_progress.html#examples",
-    "href": "reference/api/progress.visualize_program_progress.html#examples",
-    "title": "progress.visualize_program_progress",
-    "section": "",
-    "text": "&gt;&gt;&gt; visualize_program_progress()\nSaves bar chart with progress towards the capstone and end of the program from today's date.\n&gt;&gt;&gt; visualize_program_progress('January 1, 2026', \n...                             'August 26, 2025', \n...                             'June 30, 2026', \n...                             'April 24, 2026'\n                            )\nSaves bar chart with progress towards the capstone start date (April 24, 2026) and end of the program (June 30, 2026) from today's date (August 26, 2025)."
-  },
-  {
-    "objectID": "reference/api/grade.needed_to_pass.html",
-    "href": "reference/api/grade.needed_to_pass.html",
-    "title": "grade.needed_to_pass",
-    "section": "",
-    "text": "grade.needed_to_pass(course_type, grades)\nCalculate the minimum grades required on all remaining graded components for a student to achieve a final grade of 60% and pass the course. Has two distinct grading schemes for quiz and project based courses.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nThe type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each\nrequired\n\n\ngrades\ndict\nA dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nA dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }"
-  },
-  {
-    "objectID": "reference/api/grade.needed_to_pass.html#parameters",
-    "href": "reference/api/grade.needed_to_pass.html#parameters",
-    "title": "grade.needed_to_pass",
-    "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nThe type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each\nrequired\n\n\ngrades\ndict\nA dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }\nrequired"
-  },
-  {
-    "objectID": "reference/api/grade.needed_to_pass.html#returns",
-    "href": "reference/api/grade.needed_to_pass.html#returns",
-    "title": "grade.needed_to_pass",
-    "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nA dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }"
-  },
-  {
-    "objectID": "reference/api/index.html",
-    "href": "reference/api/index.html",
-    "title": "Function reference",
-    "section": "",
-    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCalculate the minimum grades required on all remaining graded components\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
-  },
-  {
-    "objectID": "reference/api/index.html#ubc-mds-helper",
-    "href": "reference/api/index.html#ubc-mds-helper",
-    "title": "Function reference",
-    "section": "",
-    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCalculate the minimum grades required on all remaining graded components\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
-  },
-  {
-    "objectID": "DEVELOPMENT.html",
-    "href": "DEVELOPMENT.html",
-    "title": "Development Guide",
-    "section": "",
-    "text": "Welcome to your shiny new package. This page will help you get started with using Hatch to manage your package.\nIf you look at your project, you will see that a pyproject.toml file. This file stores both your package configuration and settings for development tools like Hatch that you will use to work on your package.\nThis file is written using a .toml format. You can learn more about toml here. Here’s the TL&DR:\n\nEach [] section in the toml file is called a table.\nYou can nest tables with double brackets like this[[]]\nTables contain information about a element that you want to configure.\n\nWe are using Hatch as the default packaging tool. Hatch allows you to configure and run environments and scripts similar to workflow tools like tox or nox.\nHach, by default, uses virtual environments (venv) to manage environments. But you can configure it to use other environment tools.Read the hatch documentation to learn more about environments.\nFor this template, we have set up Hatch environments for you to use. At the bottom of your pyproject.toml file, notice a hatch environment section that looks like this:\n########################################\n# Hatch Environments\n########################################\nBelow is the Hatch environment to install your package. Notice that it defines pip and twine as two packages that the environment needs.\n[tool.hatch.envs.build]\ndescription = \"\"\"Test the installation the package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\nThe table below defines the scripts that you will run build and check your package.\n[tool.hatch.envs.build.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\ndetached = true\nYou can enter that environment to check it out:\n$ hatch shell build\nIf you run pip list, in the environment, twine will be there:\n$ pip list\nHatch by default, installs your package in editable mode (-e) into its virtual environments. But if detached=True is set, then it will skip installing your package into the virtual enviornment.\n\n\nBelow you see the Hatch environment test table.\ntool.hatch.envs says, “Hey, Hatch, this is the definition for an environment.” test is the name of the environment.\nThe environment below defines the dependencies that Hatch needs to install into the environment named test.\n[tool.hatch.envs.test]\ndescription = \"\"\"Run the test suite.\"\"\"\ndependencies = [\n    \"pytest\",\n    \"pytest-cov\",\n    \"pytest-raises\",\n    \"pytest-randomly\",\n    \"pytest-xdist\",\n]\nTo enter a Hatch environment use:\nhatch shell environmentname\nSo you can enter the test environment above with:\nhatch shell test\n\n\n\nIf the environment has a matrix associated with it, that tells Hatch to run the test scripts across different Python versions.\n[[tool.hatch.envs.test.matrix]]\npython = [\"3.10\", \"3.11\", \"3.12\", \"3.13\"]\nIf you run hatch shell test, you will see the output below. To enter an environment with a matrix attached to it, you need to pick the Python environment version that you want to open.\n$ hatch shell test                           \nEnvironment `test` defines a matrix, choose one of the following instead:\n\ntest.py3.10\ntest.py3.11\ntest.py3.12\ntest.py3.13\nOpen the Python 3.13 environment like this:\n$ hatch shell test.py3.13\nTo leave an environment use:\n$ deactivate\n\n\n\nIn the tests section of your pyproject.toml, you will see a tool.hatch.envs.test.scripts table.\nThis table defines the commands that you want Hatch to run in the test environment. Notice that the script has one command called run.\n[tool.hatch.envs.test.scripts]\nrun = \"pytest {args:--cov=greatproject --cov-report=term-missing}\"\nTo run this script , use:\nhatch run test:run\n\nhatch run: calls Hatch and tells it that it will be running a command\ntest:run: defines the environment you want it to run (test) and defines the name of the “script” to berun.\n\nIf you have a Hatch matrix setup for tests, it will both install the necessary Python version using UV and run your tests on each version of the Python versions that you declare in the matrix table. In this case, there are 4 Python versions in the environment, so your tests will run 4 times, once in each Python version listed in the matrix table.\n@lwasser ➜ /workspaces/pyopensci-scipy25-create-python-package (main) $ hatch run test:run\n──────────────────────────────────────────────────────────────────────── test.py3.10 ────────────────────────────────────────────────────────────────────────\n==================================================================== test session starts ====================================================================\nplatform linux -- Python 3.10.16, pytest-8.4.1, pluggy-1.6.0\nUsing --randomly-seed=1490740387\nrootdir: /workspaces/pyopensci-scipy25-create-python-package\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1\ncollected 2 items                                                                                                                                           \n\ntests/system/test_import.py .                                                                                                                         [ 50%]\ntests/unit/test_example.py .                                                                                                                          [100%]\n\n====================================================================== tests coverage =======================================================================\n_____________________________________________________ coverage: platform linux, python 3.10.16-final-0 ______________________________________________________\n\nName                           Stmts   Miss Branch BrPart    Cover   Missing\n----------------------------------------------------------------------------\nsrc/greatproject/__init__.py       0      0      0      0  100.00%\nsrc/greatproject/example.py        2      0      0      0  100.00%\n----------------------------------------------------------------------------\nTOTAL                              2      0      0      0  100.00%\n===================================================================== 2 passed in 0.05s =====================================================================\n──────────────────────────────────────────────────────────────────────── test.py3.11 ────────────────────────────────────────────────────────────────────────\n==================================================================== test session starts ====================================================================\nplatform linux -- Python 3.11.12, pytest-8.4.1, pluggy-1.6.0\nUsing --randomly-seed=1596865075\nrootdir: /workspaces/pyopensci-scipy25-create-python-package\nconfigfile: pyproject.toml\ntestpaths: tests\nplugins: xdist-3.8.0, randomly-3.16.0, raises-0.11, cov-6.2.1\ncollected 2 items                                                                                                                                           \n\ntests/system/test_import.py .                                                                                                                         [ 50%]\ntests/unit/test_example.py .                                                                                                                          [100%]\n\n====================================================================== tests coverage =======================================================================\n_____________________________________________________ coverage: platform linux, python 3.11.12-final-0 ______________________________________________________\n\nName                           Stmts   Miss Branch BrPart    Cover   Missing\n----------------------------------------------------------------------------\nsrc/greatproject/__init__.py       0      0      0      0  100.00%\nsrc/greatproject/example.py        2      0      0      0  100.00%\n----------------------------------------------------------------------------\nTOTAL                              2      0      0      0  100.00%\n===================================================================== 2 passed in 0.05s =====================================================================\n\n\n\nYou can build your package using the environment and scripts defined in the build tables:\nhatch run build:check\nThis script builds and checks the output distribution files of your package.\nThis build environment table declares that pip and twine should be added to that environment. Adding pip to the environment ensures that it is a current, up-to-date version.\n[tool.hatch.envs.build]\ndescription = \"\"\"Build and test your package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\ndetached = true\n# This table installs created the command hatch run install:check which will build and check your package.\n[tool.hatch.envs.install.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\nThis uses the above environment and tells hatch to run\n\npip check, # verifies your dependencies\nhatch build --clean\n\ntwine check dist/* # this checks your distribution for metadata and other potential issues. to build and test your package."
-  },
-  {
-    "objectID": "DEVELOPMENT.html#build-your-package",
-    "href": "DEVELOPMENT.html#build-your-package",
-    "title": "Development Guide",
-    "section": "",
-    "text": "You can build your package using the environment and scripts defined in the build tables:\nhatch run build:check\nThis script builds and checks the output distribution files of your package.\nThis build environment table declares that pip and twine should be added to that environment. Adding pip to the environment ensures that it is a current, up-to-date version.\n[tool.hatch.envs.build]\ndescription = \"\"\"Build and test your package.\"\"\"\ndependencies = [\n    \"pip\",\n    \"twine\",\n]\ndetached = true\n# This table installs created the command hatch run install:check which will build and check your package.\n[tool.hatch.envs.install.scripts]\ncheck = [\n    \"pip check\",\n    \"hatch build {args:--clean}\",\n    \"twine check dist/*\",\n]\nThis uses the above environment and tells hatch to run\n\npip check, # verifies your dependencies\nhatch build --clean\n\ntwine check dist/* # this checks your distribution for metadata and other potential issues. to build and test your package."
-  },
-  {
-    "objectID": "CHANGELOG.html",
-    "href": "CHANGELOG.html",
-    "title": "Changelog",
-    "section": "",
-    "text": "All notable changes to this project will be documented in this file.\nThe format is based on Keep a Changelog, and this project adheres to Semantic Versioning.\n\n\n\nUpcoming features and fixes\n\n\n\n\n\nFirst release"
-  },
-  {
-    "objectID": "CHANGELOG.html#unreleased",
-    "href": "CHANGELOG.html#unreleased",
-    "title": "Changelog",
-    "section": "",
-    "text": "Upcoming features and fixes"
-  },
-  {
-    "objectID": "CHANGELOG.html#section",
-    "href": "CHANGELOG.html#section",
-    "title": "Changelog",
-    "section": "",
-    "text": "First release"
-  },
-  {
     "objectID": "CONTRIBUTING.html",
     "href": "CONTRIBUTING.html",
     "title": "Contributing",
@@ -168,6 +63,55 @@
     "text": "&gt;&gt;&gt; status(config)\nDisplays program status from today’s date.\nresult = { “date”: date, “day_of_week”: date, “block”: None, “week_in_block”: None, “during_break”: False, “break_name”: None, “days_until_next_break”: None, “next_break_name”: None, “between_blocks” = False }"
   },
   {
+    "objectID": "reference/api/grade.needed_to_pass.html",
+    "href": "reference/api/grade.needed_to_pass.html",
+    "title": "grade.needed_to_pass",
+    "section": "",
+    "text": "grade.needed_to_pass(course_type, grades)\nCalculate the minimum grades required on all remaining graded components for a student to achieve a final grade of 60% and pass the course. Has two distinct grading schemes for quiz and project based courses.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nThe type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each\nrequired\n\n\ngrades\ndict\nA dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nA dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }"
+  },
+  {
+    "objectID": "reference/api/grade.needed_to_pass.html#parameters",
+    "href": "reference/api/grade.needed_to_pass.html#parameters",
+    "title": "grade.needed_to_pass",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nThe type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each\nrequired\n\n\ngrades\ndict\nA dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }\nrequired"
+  },
+  {
+    "objectID": "reference/api/grade.needed_to_pass.html#returns",
+    "href": "reference/api/grade.needed_to_pass.html#returns",
+    "title": "grade.needed_to_pass",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nA dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }"
+  },
+  {
+    "objectID": "reference/api/index.html",
+    "href": "reference/api/index.html",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCalculate the minimum grades required on all remaining graded components\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
+  },
+  {
+    "objectID": "reference/api/index.html#ubc-mds-helper",
+    "href": "reference/api/index.html#ubc-mds-helper",
+    "title": "Function reference",
+    "section": "",
+    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCalculate the minimum grades required on all remaining graded components\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ubc_mds_helper",
+    "section": "",
+    "text": "Welcome to ubc_mds_helper."
+  },
+  {
+    "objectID": "index.html#project-purpose",
+    "href": "index.html#project-purpose",
+    "title": "ubc_mds_helper",
+    "section": "Project Purpose",
+    "text": "Project Purpose\nubc_mds_helper is a project that helps students in the UBC Masters of Data Science (MDS) program better understand and plan their academic timeline.\nThe MDS program follows 6 blocks of instruction, each consisting of 4 courses delivered over a standard cycle of 5 weeks. At the end of the 6 blocks, a 2 month capstones project is required to complete the program, resulting in a total program length of 10 months.\nWith the large number of deadlines and the variability in workload across the 5 weeks within each block, it is difficult for students to get a sense of where they are in the program at a given time. This helper package provides date-based tools to describe a student’s academic position, program phase, and progress, and support planning for personal commitments, absences, late submissions, and meeting course-level requirements.\nThis helper is based on a program cofiguration for the 2025/2026 cohort, and would need to be adapted for other program cycles.\nThere is no package that is specific to the MDS program. However, we will be using the python standard library of datetime and calendar to streamline date calculations and interpretations."
+  },
+  {
     "objectID": "reference/api/assessments.late_assignment.html",
     "href": "reference/api/assessments.late_assignment.html",
     "title": "assessments.late_assignment",
@@ -203,10 +147,38 @@
     "text": "Higher-stakes assignment, first late submission:\n&gt;&gt;&gt; late_assignment(80, 0)\nStatus: Late (1st occurrence)\nLate count: 1\nScaling factor: 0.75\n60.0\nLower-stakes assignment, any late submission:\n&gt;&gt;&gt; late_assignment(90, 2, is_lower_stakes=True)\nStatus: Late not accepted (lower-stakes)\nLate count: 2\nScaling factor: 0.0\n0.0\n0.0"
   },
   {
-    "objectID": "reference/index.html",
-    "href": "reference/index.html",
-    "title": "API Reference",
+    "objectID": "reference/api/progress.visualize_program_progress.html",
+    "href": "reference/api/progress.visualize_program_progress.html",
+    "title": "progress.visualize_program_progress",
     "section": "",
-    "text": "This page documents the functions in the package."
+    "text": "progress.visualize_program_progress(\n    current_date=None,\n    program_start_date=None,\n    program_end_date=None,\n    capstone_start_date=None,\n)\nVisualizes program progress (in %) from a date to the capstone and program end date.\nCalculates the percentage of elapsed time between the program start date to the capstone start date and program end date of the UBC MDS program, and visualizes the result as a bar chart.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncurrent_date\nstr or Python datetime object\nDate at which to visualize progress from. If None, defaults to today’s date.\nNone\n\n\nprogram_start_date\nstr or Python datetime object\nStart date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’].\nNone\n\n\nprogram_end_date\nstr or Python datetime object\nEnd date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’].\nNone\n\n\ncapstone_start_date\nstr or Python datetime object\nStart date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].\nNone\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ncapstone_progress_percentage, completion_percentage : floats\nThis function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the img/ directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program.\n\n\n\n\n\n\n&gt;&gt;&gt; visualize_program_progress()\nSaves bar chart with progress towards the capstone and end of the program from today's date.\n&gt;&gt;&gt; visualize_program_progress('January 1, 2026', \n...                             'August 26, 2025', \n...                             'June 30, 2026', \n...                             'April 24, 2026'\n                            )\nSaves bar chart with progress towards the capstone start date (April 24, 2026) and end of the program (June 30, 2026) from today's date (August 26, 2025)."
+  },
+  {
+    "objectID": "reference/api/progress.visualize_program_progress.html#parameters",
+    "href": "reference/api/progress.visualize_program_progress.html#parameters",
+    "title": "progress.visualize_program_progress",
+    "section": "",
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncurrent_date\nstr or Python datetime object\nDate at which to visualize progress from. If None, defaults to today’s date.\nNone\n\n\nprogram_start_date\nstr or Python datetime object\nStart date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’].\nNone\n\n\nprogram_end_date\nstr or Python datetime object\nEnd date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’].\nNone\n\n\ncapstone_start_date\nstr or Python datetime object\nStart date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].\nNone"
+  },
+  {
+    "objectID": "reference/api/progress.visualize_program_progress.html#returns",
+    "href": "reference/api/progress.visualize_program_progress.html#returns",
+    "title": "progress.visualize_program_progress",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\ncapstone_progress_percentage, completion_percentage : floats\nThis function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the img/ directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program."
+  },
+  {
+    "objectID": "reference/api/progress.visualize_program_progress.html#examples",
+    "href": "reference/api/progress.visualize_program_progress.html#examples",
+    "title": "progress.visualize_program_progress",
+    "section": "",
+    "text": "&gt;&gt;&gt; visualize_program_progress()\nSaves bar chart with progress towards the capstone and end of the program from today's date.\n&gt;&gt;&gt; visualize_program_progress('January 1, 2026', \n...                             'August 26, 2025', \n...                             'June 30, 2026', \n...                             'April 24, 2026'\n                            )\nSaves bar chart with progress towards the capstone start date (April 24, 2026) and end of the program (June 30, 2026) from today's date (August 26, 2025)."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html",
+    "href": "CODE_OF_CONDUCT.html",
+    "title": "GROUP 33 CODE OF CONDUCT",
+    "section": "",
+    "text": "GROUP 33 CODE OF CONDUCT\n\nOur Commitment to Diversity and Inclusivity\nAs members of Group 33, working on the UBC MDS Helper, we are committed to building a collaborative, inclusive, and respectful environment. We welcome contributions from all team members regardless of background, identity, perspective, or experience.\nWe believe that diversity strengthens teamwork and leads to more ethical and impactful data science outcomes.\nOur goal is to ensure every member of this project feels safe, valued, and empowered to contribute.\n\n\nExpected Behaviour\nAll project members are expected to:\n\nTreat all team members with respect, empathy, and professionalism\nUse inclusive, non-judgmental, and non-discriminatory language\nParticipate actively and communicate clearly\nCollaborate constructively, especially when giving or receiving feedback\nHonour project deadlines and communicate early when any challenges arise\nMaintain data integrity, confidentiality, and ethical standards\nAsk questions openly and support one another’s learning\nTake responsibility for their contributions to the project\n\n\n\nUnacceptable Behaviour\nThe following behaviours will not be tolerated in this project:\n\nHarassment, bullying, or intimidation in any form\nDiscriminatory comments, jokes, or actions\nPersonal attacks, name-calling, or unprofessional tone\nDismissing or belittling others’ ideas\nSharing confidential or sensitive information (including dataset privacy violations)\nDeliberately undermining project progress\nInappropriate or offensive communication\nAny behaviour that causes another team member to feel unsafe, excluded, or disrespected\n\n\n\nReporting a Concern\nIf you experience or observe a violation of this Code of Conduct, please report it to:\n\nAny Group 33 member you feel comfortable approaching\nThe course TA or instructor if the issue cannot be resolved within the group\n\nReports should include:\n\nA description of the behaviour\nWhen and where it occurred\nIndividuals involved\nAny evidence (screenshots, messages, etc.)\n\nAll reports will be reviewed confidentially and with sensitivity.\n\n\nFostering a Positive and Supportive Team Culture\nAt Group 33, we want everyone to feel excited, motivated, and comfortable contributing. To create a supportive environment, we encourage:\n\nCelebrating contributions: Recognize and appreciate the effort of every team member, no matter how small.\nEncouraging curiosity: Ask questions freely — there are no “silly” questions when learning together.\nSharing knowledge: Help each other understand concepts, code, and data analysis techniques.\nBeing patient and kind: Everyone works at their own pace; respect each other’s learning journey."
   }
 ]
