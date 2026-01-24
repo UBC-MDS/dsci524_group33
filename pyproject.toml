@@ -54,6 +54,7 @@ Download = "https://pypi.org/project/ubc_mds_helper/#files"
 dev = [
     "hatch",
     "pre-commit",
+    "ruff",
 ]
 
 docs = [
