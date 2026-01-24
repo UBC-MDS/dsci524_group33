@@ -1,8 +1,0 @@
-name: ubc_mds_helper
-channels:
-  - conda-forge
-dependencies:
-  - python=3.11
-  - pip
-  - pip:
-      - -e ".[dev,tests,docs,build]" # install base dependecies and everything else from dev, test, docs, and build sections in pyproject.toml
