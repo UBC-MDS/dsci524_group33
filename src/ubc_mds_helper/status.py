@@ -10,74 +10,52 @@ from datetime import date, timedelta
 from .config import PROGRAM_CONFIG_2025_2026
 from .helper_functions import normalize_date
 
-#  To get a proper example of the format needed for quartodoc rendering, I used chatgpt 5 to format it
-
 def status(
     config,
     date_input=None
 ):
     """
-    Return program status for a given date within the UBC MDS schedule.
+
+    Return program status for a given date.
 
     Parameters
     ----------
-    config : dict
-        Program configuration dictionary containing:
-
-        - ``program_start`` and ``program_end`` (datetime.date)
-        - ``blocks``: list of dicts with keys ``block``, ``start``, ``end``
-        - ``breaks``: list of dicts with keys ``name``, ``start``, ``end``
-
-    date_input : str or datetime.date or datetime.datetime, optional
-        Date to evaluate. If ``None``, defaults to today's date.
+    config : config.py
+        Contains program date information, block structure, and break periods.
+    date_input : str or Python datetime object
+        Date at which program status is based upon.
+        If None, defaults to today's date.
 
     Returns
     -------
     result : dict
-        Dictionary describing academic position on the input date.
+        Dictionary will be returned descibing academic position based on date.
+        Dictionary is printed out in the console for viewing. 
 
-        Keys
-        ~~~~
-        date : datetime.date
-            The evaluated date.
-        day_of_week : str
-            Day name (e.g., ``"Monday"``).
-        block : int or None
-            Current block number if within a block; otherwise ``None``.
-        week_in_block : int or None
-            Week number within the current block; otherwise ``None``.
-        during_break : bool
-            Whether the date falls within a named break.
-        break_name : str or None
-            Name of the current break if applicable; otherwise ``None``.
-        days_until_next_break : int or None
-            Days until the next break begins; ``None`` if no upcoming breaks.
-        next_break_name : str or None
-            Name of the next break; ``None`` if no upcoming breaks.
-        between_blocks : bool
-            True when not in a block and not in a named break (typically weekends
-            between blocks).
+            DATE: general information on the input date. 
 
-    Raises
-    ------
-    ValueError
-        If ``date_input`` is outside the program bounds defined by
-        ``config['program_start']`` and ``config['program_end']``.
+            BLOCK: calculates which block you are in and the week within the block. 
+
+            BREAK: determines if you're in a block or on holidays; if you are in a block, will tell you the next upcoming break and how far away it is; disingtuishes between holidays and weekends between blocks.
 
     Examples
     --------
-    Use today's date:
+    >>> status(config)
 
-    >>> from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
-    >>> result = status(PROGRAM_CONFIG_2025_2026)
-    >>> result["day_of_week"]
-    'Monday'
+    Displays program status from today's date.
 
-    Use a specific date (string formats supported by ``normalize_date``):
+    result = {
+        "date": date,
+        "day_of_week": date,
+        "block": None,
+        "week_in_block": None,
+        "during_break": False,
+        "break_name": None,
+        "days_until_next_break": None,
+        "next_break_name": None,
+        "between_blocks" = False
+    }
 
-    >>> result = status(PROGRAM_CONFIG_2025_2026, "2025-09-15")
-    >>> result["block"], result["week_in_block"]
-    (1, 2)
     """
 
     # --- DATE ---
