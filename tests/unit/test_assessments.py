@@ -39,3 +39,18 @@ def test_negative_late_count_raises_error():
         assert False, "Expected ValueError for negative late_count"
     except ValueError:
         pass
+    
+def test_raw_grade_out_of_bounds_raises_error():
+    """Test that raw grades out of bounds raise a ValueError."""
+    try:
+        late_assignment(raw_grade=110, late_count=1, is_lower_stakes=False)
+        assert False, "Expected ValueError for raw_grade > 100"
+    except ValueError:
+        pass
+
+    try:
+        late_assignment(raw_grade=-10, late_count=1, is_lower_stakes=False)
+        assert False, "Expected ValueError for raw_grade < 0"
+    except ValueError:
+        pass
+
