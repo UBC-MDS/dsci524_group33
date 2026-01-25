@@ -34,19 +34,19 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 ## Functions
 
-1. Status()
+1. status.status()
 
 - A date and calendar-based Python module that describes position in the UBC MDS program.
 
-2. Late_assignments()
+2. assessments.late_assignment()
 
 - The function prints the submission status, the updated late count, and the scaling factor applied, and returns the scaled grade.
 
-3. Grade()
+3. grade.needed_to_pass()
 
 - A grade calculator Python module that helps UBC MDS students check what grades they need to get for remaining course components to pass.
 
-4. Progression()
+4. progress.visualize_program_progress()
 
 - Visualizes program progress (in %) from a date to the capstone and program end date.
 
@@ -59,13 +59,22 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 ## Get started
 
-You can install this package into your preferred Python environment using pip:
+To install this package for development or use:
 
 ```bash
-$ pip install ubc_mds_helper
+$ git clone https://github.com/UBC-MDS/dsci524_group33.git
+$ cd dsci524_group33
+$ pip install -e ".[tests,dev,docs]"
+```
+This project uses Hatch to manage environments, run tests, and build documentation
+in a reproducible way via `pyproject.toml`.
+
+To create the default development environment:
+
+```bash
+$ hatch env create
 ```
 
-TODO: Add a brief example of how to use the package to this section
 
 To use ubc_mds_helper in your code:
 
@@ -73,6 +82,40 @@ To use ubc_mds_helper in your code:
 >>> import ubc_mds_helper
 >>> ubc_mds_helper.status(config, date="Mar 20, 2026")
 ```
+### Running Tests
+
+To run the full test suite with coverage reporting:
+```bash
+$ hatch run test:run
+```
+
+### Code Style
+
+The project uses ruff for formatting.
+
+To check formatting
+
+```bash
+$ ruff check .
+```
+
+To format files: 
+
+```bash
+$ ruff format .
+```
+
+### Documentation
+
+To render and preview the documentation:
+```bash
+$ quarto render
+$ quarto preview
+```
+## Continuous Integration
+
+All tests, formatting checks, and documentation builds are automatically run
+using GitHub Actions on pull requests and merges to `main`.
 
 ## Contributors
 
