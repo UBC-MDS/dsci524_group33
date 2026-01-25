@@ -1,5 +1,0 @@
----
-title: API Reference
----
-
-This page documents the functions in the package.
