@@ -65,9 +65,9 @@ There is no package that is specific to the MDS program. However, we will be usi
 To install this package for development or use:
 
 ```bash
-$ git clone https://github.com/UBC-MDS/dsci524_group33.git
-$ cd dsci524_group33
-$ pip install -e ".[tests,dev,docs]"
+git clone https://github.com/UBC-MDS/dsci524_group33.git
+cd dsci524_group33
+pip install -e ".[tests,dev,docs]"
 ```
 This project uses Hatch to manage environments, run tests, and build documentation
 in a reproducible way via `pyproject.toml`.
@@ -75,7 +75,7 @@ in a reproducible way via `pyproject.toml`.
 To create the default development environment:
 
 ```bash
-$ hatch env create
+hatch env create
 ```
 
 
@@ -134,7 +134,7 @@ conda activate ubc_mds_helper
 
 To run the full test suite with coverage reporting:
 ```bash
-$ hatch run test:run
+hatch run test:run
 ```
 
 ### Code Style
@@ -144,13 +144,13 @@ The project uses ruff for formatting.
 To check formatting
 
 ```bash
-$ ruff check .
+ruff check .
 ```
 
 To format files: 
 
 ```bash
-$ ruff format .
+ruff format .
 ```
 
 ## Documentation
