@@ -167,6 +167,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
   <li><a href="#returns" id="toc-returns" class="nav-link" data-scroll-target="#returns">Returns</a></li>
+  <li><a href="#raises" id="toc-raises" class="nav-link" data-scroll-target="#raises">Raises</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -180,15 +182,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="ubc_mds_helper.grade.needed_to_pass" class="level1">
 <h1>grade.needed_to_pass</h1>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>grade.needed_to_pass(course_type, grades)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Calculate the minimum grades required on all remaining graded components for a student to achieve a final grade of 60% and pass the course. Has two distinct grading schemes for quiz and project based courses.</p>
+<p>Compute the minimum equal grade needed on all remaining components to pass (&gt;= 60%).</p>
+<p>The function supports two grading schemes:</p>
+<ul>
+<li><strong>quiz</strong>: 4 labs (12.5% each) and 2 quizzes (25% each)</li>
+<li><strong>project</strong>: 4 milestones (20% each) and 4 individual assignments (5% each)</li>
+</ul>
 <section id="parameters" class="level2 doc-section doc-section-parameters">
 <h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 4%">
-<col style="width: 3%">
-<col style="width: 87%">
-<col style="width: 4%">
+<col style="width: 8%">
+<col style="width: 5%">
+<col style="width: 77%">
+<col style="width: 8%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -202,13 +209,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>course_type</td>
 <td>str</td>
-<td>The type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each</td>
+<td>Course grading scheme. Must be <code>"quiz"</code> or <code>"project"</code>.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
 <td>grades</td>
 <td>dict</td>
-<td>A dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }</td>
+<td>Dictionary mapping completed component names to earned grades (0 - 100). Example: <code>{"lab1": 80, "quiz1": 70}</code></td>
 <td><em>required</em></td>
 </tr>
 </tbody>
@@ -218,9 +225,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="doc-section doc-section-returns anchored" data-anchor-id="returns">Returns</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 94%">
+<col style="width: 4%">
+<col style="width: 4%">
+<col style="width: 91%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -233,10 +240,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td></td>
 <td>dict</td>
-<td>A dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }</td>
+<td>Dictionary mapping each remaining component to the minimum grade required on that component to reach at least 60%. The same minimum grade is applied to all remaining components.</td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="raises" class="level2 doc-section doc-section-raises">
+<h2 class="doc-section doc-section-raises anchored" data-anchor-id="raises">Raises</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 7%">
+<col style="width: 88%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>ValueError</td>
+<td>If <code>course_type</code> is invalid. If a component name is unknown. If a grade is outside the range 0 - 100. If it is mathematically impossible to pass.</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>TypeError</td>
+<td>If <code>grades</code> is not a dictionary. If any key is not a string or value is not numeric.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="examples" class="level2 doc-section doc-section-examples">
+<h2 class="doc-section doc-section-examples anchored" data-anchor-id="examples">Examples</h2>
+<p>Quiz-based course with two labs and one quiz completed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> needed_to_pass(<span class="st">"quiz"</span>, {<span class="st">"lab1"</span>: <span class="dv">80</span>, <span class="st">"lab2"</span>: <span class="dv">70</span>, <span class="st">"quiz1"</span>: <span class="dv">60</span>})</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>{<span class="st">'lab3'</span>: <span class="fl">52.5</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'lab4'</span>: <span class="fl">52.5</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'quiz2'</span>: <span class="fl">52.5</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Project-based course with one milestone completed:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> needed_to_pass(<span class="st">"project"</span>, {<span class="st">"Milestone1"</span>: <span class="dv">80</span>})</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>{<span class="st">'Milestone2'</span>: <span class="fl">55.0</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a> <span class="st">'Milestone3'</span>: <span class="fl">55.0</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a> <span class="st">'Milestone4'</span>: <span class="fl">55.0</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a> <span class="st">'IndividualAssignment1'</span>: <span class="fl">55.0</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a> <span class="st">'IndividualAssignment2'</span>: <span class="fl">55.0</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a> <span class="st">'IndividualAssignment3'</span>: <span class="fl">55.0</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a> <span class="st">'IndividualAssignment4'</span>: <span class="fl">55.0</span>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

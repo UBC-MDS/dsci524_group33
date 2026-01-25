@@ -67,35 +67,49 @@
     "href": "reference/api/grade.needed_to_pass.html",
     "title": "grade.needed_to_pass",
     "section": "",
-    "text": "grade.needed_to_pass(course_type, grades)\nCalculate the minimum grades required on all remaining graded components for a student to achieve a final grade of 60% and pass the course. Has two distinct grading schemes for quiz and project based courses.\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nThe type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each\nrequired\n\n\ngrades\ndict\nA dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nA dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }"
+    "text": "grade.needed_to_pass(course_type, grades)\nCompute the minimum equal grade needed on all remaining components to pass (&gt;= 60%).\nThe function supports two grading schemes:\n\nquiz: 4 labs (12.5% each) and 2 quizzes (25% each)\nproject: 4 milestones (20% each) and 4 individual assignments (5% each)\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nCourse grading scheme. Must be \"quiz\" or \"project\".\nrequired\n\n\ngrades\ndict\nDictionary mapping completed component names to earned grades (0 - 100). Example: {\"lab1\": 80, \"quiz1\": 70}\nrequired\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\ndict\nDictionary mapping each remaining component to the minimum grade required on that component to reach at least 60%. The same minimum grade is applied to all remaining components.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nName\nType\nDescription\n\n\n\n\n\nValueError\nIf course_type is invalid. If a component name is unknown. If a grade is outside the range 0 - 100. If it is mathematically impossible to pass.\n\n\n\nTypeError\nIf grades is not a dictionary. If any key is not a string or value is not numeric.\n\n\n\n\n\n\nQuiz-based course with two labs and one quiz completed:\n&gt;&gt;&gt; needed_to_pass(\"quiz\", {\"lab1\": 80, \"lab2\": 70, \"quiz1\": 60})\n{'lab3': 52.5,\n 'lab4': 52.5,\n 'quiz2': 52.5}\nProject-based course with one milestone completed:\n&gt;&gt;&gt; needed_to_pass(\"project\", {\"Milestone1\": 80})\n{'Milestone2': 55.0,\n 'Milestone3': 55.0,\n 'Milestone4': 55.0,\n 'IndividualAssignment1': 55.0,\n 'IndividualAssignment2': 55.0,\n 'IndividualAssignment3': 55.0,\n 'IndividualAssignment4': 55.0}"
   },
   {
     "objectID": "reference/api/grade.needed_to_pass.html#parameters",
     "href": "reference/api/grade.needed_to_pass.html#parameters",
     "title": "grade.needed_to_pass",
     "section": "",
-    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nThe type of course. Must be input as “quiz” or “project”. - “quiz”: Course with 4 labs worth 12.5% each and 2 quizes worth 25% each - “project”: Course with 4 milestones worth 20% each and 4 individual assignments worth 5% each\nrequired\n\n\ngrades\ndict\nA dictionary of submitted compon4ents and their related grades. Example: { “lab1”: 85, “lab2: 66,”quiz1”: 72 }\nrequired"
+    "text": "Name\nType\nDescription\nDefault\n\n\n\n\ncourse_type\nstr\nCourse grading scheme. Must be \"quiz\" or \"project\".\nrequired\n\n\ngrades\ndict\nDictionary mapping completed component names to earned grades (0 - 100). Example: {\"lab1\": 80, \"quiz1\": 70}\nrequired"
   },
   {
     "objectID": "reference/api/grade.needed_to_pass.html#returns",
     "href": "reference/api/grade.needed_to_pass.html#returns",
     "title": "grade.needed_to_pass",
     "section": "",
-    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nA dictionary of each remaining graded component and their respective grades required to finish the course with at least 60%. We compute equal minimum grades for all remaining assignments needed to pass. Example: { “lab3”: 61.5, “lab4”: 61.5, “quiz2”: 61.5 }"
+    "text": "Name\nType\nDescription\n\n\n\n\n\ndict\nDictionary mapping each remaining component to the minimum grade required on that component to reach at least 60%. The same minimum grade is applied to all remaining components."
+  },
+  {
+    "objectID": "reference/api/grade.needed_to_pass.html#raises",
+    "href": "reference/api/grade.needed_to_pass.html#raises",
+    "title": "grade.needed_to_pass",
+    "section": "",
+    "text": "Name\nType\nDescription\n\n\n\n\n\nValueError\nIf course_type is invalid. If a component name is unknown. If a grade is outside the range 0 - 100. If it is mathematically impossible to pass.\n\n\n\nTypeError\nIf grades is not a dictionary. If any key is not a string or value is not numeric."
+  },
+  {
+    "objectID": "reference/api/grade.needed_to_pass.html#examples",
+    "href": "reference/api/grade.needed_to_pass.html#examples",
+    "title": "grade.needed_to_pass",
+    "section": "",
+    "text": "Quiz-based course with two labs and one quiz completed:\n&gt;&gt;&gt; needed_to_pass(\"quiz\", {\"lab1\": 80, \"lab2\": 70, \"quiz1\": 60})\n{'lab3': 52.5,\n 'lab4': 52.5,\n 'quiz2': 52.5}\nProject-based course with one milestone completed:\n&gt;&gt;&gt; needed_to_pass(\"project\", {\"Milestone1\": 80})\n{'Milestone2': 55.0,\n 'Milestone3': 55.0,\n 'Milestone4': 55.0,\n 'IndividualAssignment1': 55.0,\n 'IndividualAssignment2': 55.0,\n 'IndividualAssignment3': 55.0,\n 'IndividualAssignment4': 55.0}"
   },
   {
     "objectID": "reference/api/index.html",
     "href": "reference/api/index.html",
     "title": "Function reference",
     "section": "",
-    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCalculate the minimum grades required on all remaining graded components\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
+    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCompute the minimum equal grade needed on all remaining components to pass (&gt;= 60%).\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
   },
   {
     "objectID": "reference/api/index.html#ubc-mds-helper",
     "href": "reference/api/index.html#ubc-mds-helper",
     "title": "Function reference",
     "section": "",
-    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCalculate the minimum grades required on all remaining graded components\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
+    "text": "Functions to help you survive in the MDS program.\n\n\n\nassessments.late_assignment\nThis function evaluates a late submission according to the program policy.\n\n\ngrade.needed_to_pass\nCompute the minimum equal grade needed on all remaining components to pass (&gt;= 60%).\n\n\nprogress.visualize_program_progress\nVisualizes program progress (in %) from a date to the capstone and program end date.\n\n\nstatus.status\nReturn program status for a given date."
   },
   {
     "objectID": "index.html",
