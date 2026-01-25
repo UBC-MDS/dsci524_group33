@@ -10,10 +10,8 @@ from datetime import date, timedelta
 from .config import PROGRAM_CONFIG_2025_2026
 from .helper_functions import normalize_date
 
-def status(
-    config,
-    date_input=None
-):
+
+def status(config, date_input=None):
     """
 
     Return program status for a given date.
@@ -30,11 +28,11 @@ def status(
     -------
     result : dict
         Dictionary will be returned descibing academic position based on date.
-        Dictionary is printed out in the console for viewing. 
+        Dictionary is printed out in the console for viewing.
 
-            DATE: general information on the input date. 
+            DATE: general information on the input date.
 
-            BLOCK: calculates which block you are in and the week within the block. 
+            BLOCK: calculates which block you are in and the week within the block.
 
             BREAK: determines if you're in a block or on holidays; if you are in a block, will tell you the next upcoming break and how far away it is; disingtuishes between holidays and weekends between blocks.
 
@@ -68,7 +66,7 @@ def status(
     date_input = normalize_date(date_input)
 
     # Test if date_input is within the program bounds
-    if date_input < config['program_start'] or date_input > config['program_end']:
+    if date_input < config["program_start"] or date_input > config["program_end"]:
         raise ValueError("Entered date is not within the 2025-2026 MDS program cycle")
 
     # --- INITIALIZE ---
@@ -86,12 +84,12 @@ def status(
     # NOTE: Through iterative testing, realized that the first block first week starts on a Friday, and the first week of block 1 actually runs for 9 days. I asked ChatGPT5 how to implement this, and the code was updated as below.
 
     # Determining block and week in block based on input date
-    for b in config['blocks']:
-        if b['start'] <= date_input <= b['end']:
-            block = b['block']
+    for b in config["blocks"]:
+        if b["start"] <= date_input <= b["end"]:
+            block = b["block"]
             if block == 1:
                 # Unique timeframe for block 1
-                first_week_end = b['start'] + timedelta(days=9)
+                first_week_end = b["start"] + timedelta(days=9)
                 if date_input <= first_week_end:
                     week_in_block = 1
                 else:
@@ -100,26 +98,26 @@ def status(
                     week_in_block = ((week_start - block_week_start).days // 7) + 2
             else:
                 # For blocks other than block 1
-                block_week_start = b['start'] - timedelta(days=b['start'].weekday())
+                block_week_start = b["start"] - timedelta(days=b["start"].weekday())
                 week_start = date_input - timedelta(days=date_input.weekday())
                 week_in_block = ((week_start - block_week_start).days // 7) + 1
             break
 
     # --- BREAK ---
     # Update Break general info
-    for br in config['breaks']:
-        if br['start'] <= date_input <= br['end']:
+    for br in config["breaks"]:
+        if br["start"] <= date_input <= br["end"]:
             during_break = True
-            break_name = br['name']
+            break_name = br["name"]
             break
-    
+
     # Assessment of upcoming breaks and days until it starts
-    upcoming_breaks = [br for br in config['breaks'] if br['start'] > date_input]
+    upcoming_breaks = [br for br in config["breaks"] if br["start"] > date_input]
 
     if upcoming_breaks:
-        next_break = min(upcoming_breaks, key=lambda br: br['start'])
-        days_until_next_break = (next_break['start'] - date_input).days
-        next_break_name = next_break['name']
+        next_break = min(upcoming_breaks, key=lambda br: br["start"])
+        days_until_next_break = (next_break["start"] - date_input).days
+        next_break_name = next_break["name"]
 
     # Caveat for if it's not an official or extended break, but a weekend that students are off between blocks
     if block is None and not during_break:
@@ -137,6 +135,7 @@ def status(
         "next_break_name": next_break_name,
         "between_blocks": between_blocks,
     }
+
 
 # Test output of status()
 if __name__ == "__main__":
