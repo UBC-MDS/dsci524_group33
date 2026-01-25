@@ -2,7 +2,9 @@ name: deploy-test-pypi
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - fix_build_deploy
   workflow_dispatch:
 
 jobs:
