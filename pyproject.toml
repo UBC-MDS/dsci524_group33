@@ -13,7 +13,7 @@ requires = ["hatchling"]
 [project]
 name = "ubc_mds_helper"
 # You can chose to use dynamic versioning with hatch or static where you add it manually.
-version = "0.1.0"
+version = "0.1.1"
 
 description = """
 A calendar-based Python package that helps UBC MDS students check specific program level
