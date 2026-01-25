@@ -42,6 +42,7 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 - The function prints the submission status, the updated late count, and the scaling factor applied, and returns the scaled grade.
 
+
 3. grade.needed_to_pass()
 
 - A grade calculator Python module that helps UBC MDS students check what grades they need to get for remaining course components to pass.
@@ -82,6 +83,23 @@ To use ubc_mds_helper in your code:
 >>> import ubc_mds_helper
 >>> ubc_mds_helper.status(config, date="Mar 20, 2026")
 ```
+
+## Development environment (conda)
+
+A conda environment is provided for development and testing.
+
+To create the environment:
+
+```bash
+conda env create -f environment.yml
+```
+
+```bash
+conda activate ubc_mds_helper
+```
+
+
+
 ### Running Tests
 
 To run the full test suite with coverage reporting:
@@ -105,13 +123,26 @@ To format files:
 $ ruff format .
 ```
 
-### Documentation
+## Documentation
+
+### Build documentation locally
+
+To generate the API reference pages using quartodoc:
+
+```bash
+quartodoc build --verbose
+```
 
 To render and preview the documentation:
 ```bash
-$ quarto render
-$ quarto preview
+quarto render
 ```
+To preview the documentation locally:
+```bash
+quarto preview
+```
+
+
 ## Continuous Integration
 
 All tests, formatting checks, and documentation builds are automatically run
