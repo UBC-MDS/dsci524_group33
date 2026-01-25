@@ -64,9 +64,10 @@ def test_impossible_to_pass():
     with pytest.raises(ValueError):
         needed_to_pass("quiz", {"lab1": 5, "lab2": 10, "quiz1": 5, "lab3": 10})
 
+
 def test_already_passing_returns_zeroes():
     """Ensure that all remaining components require 0 when the student is already passing."""
-    result = needed_to_pass("quiz", {"quiz1": 100,"quiz2": 100,"lab1": 100})
+    result = needed_to_pass("quiz", {"quiz1": 100, "quiz2": 100, "lab1": 100})
 
     for value in result.values():
         assert value == 0
