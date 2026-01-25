@@ -1,5 +1,5 @@
 """
-The function prints the submission status of a lower-stake and 
+The function prints the submission status of a lower-stake and
 higher-stake assignment, the updated count, and the
 scaling factor applied, and returns the scaled grade, following the
 UBC MDS policy.
@@ -8,6 +8,7 @@ Author: Valeria Siciliano
 
 Date: January 9, 2026
 """
+
 
 def late_assignment(raw_grade, late_count, is_lower_stakes=False):
     """
@@ -41,7 +42,7 @@ def late_assignment(raw_grade, late_count, is_lower_stakes=False):
 
     Late submissions for lower-stakes assessments do not count toward the
     cumulative late count and always receive 0 points.
-    
+
     Examples
     --------
     Higher-stakes assignment, first late submission:
@@ -50,7 +51,7 @@ def late_assignment(raw_grade, late_count, is_lower_stakes=False):
     Late count: 1
     Scaling factor: 0.75
     60.0
-    
+
     Lower-stakes assignment, any late submission:
     >>> late_assignment(90, 2, is_lower_stakes=True)
     Status: Late not accepted (lower-stakes)
@@ -59,9 +60,9 @@ def late_assignment(raw_grade, late_count, is_lower_stakes=False):
     0.0
     0.0
     """
-    
+
     if late_count < 0:
-        raise ValueError("late_count must be a non-negative integer.")    
+        raise ValueError("late_count must be a non-negative integer.")
     if is_lower_stakes:
         scaling = 0.0
         status = "Late not accepted (lower-stakes)"
@@ -82,4 +83,3 @@ def late_assignment(raw_grade, late_count, is_lower_stakes=False):
     print(f"Scaling factor: {scaling}")
 
     return raw_grade * scaling
-
