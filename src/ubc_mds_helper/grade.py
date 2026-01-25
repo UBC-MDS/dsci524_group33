@@ -6,6 +6,7 @@ Author: Michael Kmetiuk
 Date: January 9, 2026
 """
 
+
 def needed_to_pass(course_type: str, grades: dict) -> dict:
     """
     Calculate the minimum grades required on all remaining graded components
@@ -49,8 +50,24 @@ def needed_to_pass(course_type: str, grades: dict) -> dict:
     if not isinstance(grades, dict):
         raise TypeError("grades must be a dictionary")
 
-    quiz_weights = {"lab1": 0.125, "lab2": 0.125, "quiz1": 0.25, "lab3": 0.125, "lab4": 0.125, "quiz2": 0.25}
-    project_weights = {"IndividualAssignment1": 0.05, "Milestone1": 0.2, "IndividualAssignment2": 0.05, "Milestone2": 0.2,"IndividualAssignment3": 0.05, "Milestone3": 0.2,"IndividualAssignment4": 0.05, "Milestone4": 0.2, }
+    quiz_weights = {
+        "lab1": 0.125,
+        "lab2": 0.125,
+        "quiz1": 0.25,
+        "lab3": 0.125,
+        "lab4": 0.125,
+        "quiz2": 0.25,
+    }
+    project_weights = {
+        "IndividualAssignment1": 0.05,
+        "Milestone1": 0.2,
+        "IndividualAssignment2": 0.05,
+        "Milestone2": 0.2,
+        "IndividualAssignment3": 0.05,
+        "Milestone3": 0.2,
+        "IndividualAssignment4": 0.05,
+        "Milestone4": 0.2,
+    }
 
     if course_type == "quiz":
         weights = quiz_weights
