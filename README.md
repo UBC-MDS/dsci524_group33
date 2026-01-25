@@ -77,12 +77,40 @@ $ hatch env create
 ```
 
 
-To use ubc_mds_helper in your code:
+## To use ubc_mds_helper in your code:
 
+Our late_assignment function 
 ```python
->>> import ubc_mds_helper
->>> ubc_mds_helper.status(config, date="Mar 20, 2026")
+>>> from ubc_mds_helper.assessments import late_assignment
+>>> late_assignment(80, 0)
+
 ```
+Our grade function
+```python
+>>> from ubc_mds_helper.grade import needed_to_pass
+>>> needed_to_pass("quiz", {"lab1": 80, "lab2": 70, "quiz1": 60})
+```
+
+Our progress.visualize function
+```python
+>>> ffrom ubc_mds_helper.progress import visualize_program_progress
+>>> visualize_program_progress(
+    current_date="January 1, 2026",
+    program_start_date="August 26, 2025",
+    program_end_date="June 30, 2026",
+    capstone_start_date="April 24, 2026",
+)
+```
+
+Our status function
+```python
+>>> from ubc_mds_helper.status import status
+>>> from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
+>>> status(PROGRAM_CONFIG_2025_2026, "March 20, 2026")
+```
+
+
+Extensive documentation for each function including more example uses can be found on our website https://ubc-mds.github.io/dsci524_group33/
 
 ## Development environment (conda)
 
