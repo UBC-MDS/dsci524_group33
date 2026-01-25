@@ -1,5 +1,8 @@
 # Welcome to ubc_mds_helper
 
+![deploy-test-pypi](https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy-test-pypi.yml/badge.svg)
+
+
 |        |        |
 |--------|--------|
 | Package | [![Latest PyPI Version](https://img.shields.io/pypi/v/ubc_mds_helper.svg)](https://pypi.org/project/ubc_mds_helper/) [![Supported Python Versions](https://img.shields.io/pypi/pyversions/ubc_mds_helper.svg)](https://pypi.org/project/ubc_mds_helper/)  |
