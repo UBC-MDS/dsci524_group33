@@ -39,9 +39,9 @@ def test_out_of_bounds():
 def test_between_block():
     '''Tests the logic for determining if the date is between blocks but not an official holiday break'''
     result = status(PROGRAM_CONFIG_2025_2026, "Feb 7, 2026")
-    assert result['block'] == None
-    assert result['week_in_block'] == None
-    assert result['between_blocks'] == True
+    assert result['block'] is None
+    assert result['week_in_block'] is None
+    assert result['between_blocks'] is True
 
 def test_today():
     '''Tests to make sure the date.today() is working proporly as a default date'''
