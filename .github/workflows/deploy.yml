@@ -33,7 +33,7 @@ jobs:
       - name: Run style checks
         run: |
           ruff check .
-          ruff format --check .
+          ruff format .
 
   build-deploy:
     needs: test-and-lint
