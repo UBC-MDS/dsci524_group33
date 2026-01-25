@@ -182,6 +182,8 @@ using GitHub Actions on pull requests and merges to `main`.
 
 Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar, Ian Gault
 
+Contributors are expected to follow the guidelines outlined in **[CONTRIBUTING.md](./CONTRIBUTING.md)**. Please review this document before submitting issues or pull requests.
+
 ## Copyright
 
 - Copyright © 2026 Jasjot Parmar, Ian Gault, Michael Kmetiuk, Valeria Siciliano.
