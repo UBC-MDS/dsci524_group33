@@ -25,7 +25,6 @@ website:
           - text: "Code of Conduct"
             href: CODE_OF_CONDUCT.md
         
-        
 format:
   html:
     theme: cosmo
