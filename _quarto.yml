@@ -15,7 +15,7 @@ website:
   navbar:
     left:
       - text: "Home"
-        href: index.qmd
+        href: README.md
       - text: "Reference"
         href: reference/api/index.qmd
       - text: "Project"
@@ -24,8 +24,6 @@ website:
             href: CONTRIBUTING.md
           - text: "Code of Conduct"
             href: CODE_OF_CONDUCT.md
-          - text: "README"
-            href: README.md
         
 format:
   html:
