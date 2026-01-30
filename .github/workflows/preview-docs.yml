@@ -75,7 +75,6 @@ jobs:
           DEPLOY_URL=$(grep -oP 'https://[^\s]+' deploy.log | grep -E '(netlify\.app|--.*\.netlify\.app)' | head -n 1)
           echo "url=${DEPLOY_URL}" >> $GITHUB_OUTPUT
 
-          
       # Update the GitHub deployment status with success/failure and the preview URL
       # This creates a clickable link in the PR to view the deployed preview
       - name: Update deployment status
