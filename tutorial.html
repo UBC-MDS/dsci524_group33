@@ -3932,7 +3932,7 @@ vertical-align: -.125em;
   <li><a href="#tools-to-help-navigate-mds" id="toc-tools-to-help-navigate-mds" class="nav-link active" data-scroll-target="#tools-to-help-navigate-mds">Tools to help navigate MDS</a>
   <ul class="collapse">
   <li><a href="#status" id="toc-status" class="nav-link" data-scroll-target="#status">Status</a></li>
-  <li><a href="#assessment" id="toc-assessment" class="nav-link" data-scroll-target="#assessment">Assessment</a></li>
+  <li><a href="#assessments" id="toc-assessments" class="nav-link" data-scroll-target="#assessments">Assessments</a></li>
   <li><a href="#grades" id="toc-grades" class="nav-link" data-scroll-target="#grades">Grades</a></li>
   <li><a href="#progress-visualization" id="toc-progress-visualization" class="nav-link" data-scroll-target="#progress-visualization">Progress Visualization</a></li>
   </ul></li>
@@ -3969,7 +3969,7 @@ vertical-align: -.125em;
 <h3 class="anchored" data-anchor-id="status">Status</h3>
 <p>We set up our date configuration to the 2025/2026 cycle, as shown in config.py.</p>
 <p>If other years are needed, the config.py file would need to be updated.</p>
-<div id="cf1528bc" class="cell" data-execution_count="1">
+<div id="e0876821" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.status <span class="im">import</span> status</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.config <span class="im">import</span> PROGRAM_CONFIG_2025_2026</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3987,47 +3987,8 @@ vertical-align: -.125em;
 </div>
 </div>
 </section>
-<section id="assessment" class="level3">
-<h3 class="anchored" data-anchor-id="assessment">Assessment</h3>
-<p>The <code>late_assignment()</code> function applies the UBC MDS late-submission policy.</p>
-<p>It prints the late penalty applied to an assignment based on the number of days it is late, and returns the adjusted grade.</p>
-<p><strong>Inputs</strong> - <code>raw_grade</code> (float or int): original grade (0–100) - <code>late_count</code> (int): number of previous late submissions - <code>is_lower_stakes</code> (bool): if True, late submissions are not accepted for lower-stakes assignments (e.g., quizzes, labs)</p>
-<p><strong>Outputs</strong> - <code>float</code>: grade after the late-submission scaling is applied</p>
-<div id="898ab865" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.assessments <span class="im">import</span> late_assignment</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: on-time submission</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 1: on-time submission&quot;</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>adjusted_grade <span class="op">=</span> late_assignment(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    raw_grade<span class="op">=</span><span class="dv">85</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    late_count<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    is_lower_stakes<span class="op">=</span><span class="va">False</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Adjusted grade:&quot;</span>, adjusted_grade)  <span class="co"># Expected: 85</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: late submission with no prior late submissions</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 2: late submission with no prior late submissions&quot;</span>)</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>adjusted_grade <span class="op">=</span> late_assignment(</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    raw_grade<span class="op">=</span><span class="dv">90</span>,</span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    late_count<span class="op">=</span><span class="dv">0</span>,</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    is_lower_stakes<span class="op">=</span><span class="va">False</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Adjusted grade:&quot;</span>, adjusted_grade)  <span class="co"># Expected: 80.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Example 1: on-time submission
-Status: Late (1st occurrence)
-Late count: 1
-Scaling factor: 0.75
-Adjusted grade: 63.75
-
-Example 2: late submission with no prior late submissions
-Status: Late (1st occurrence)
-Late count: 1
-Scaling factor: 0.75
-Adjusted grade: 67.5</code></pre>
-</div>
-</div>
+<section id="assessments" class="level3">
+<h3 class="anchored" data-anchor-id="assessments">Assessments</h3>
 </section>
 <section id="grades" class="level3">
 <h3 class="anchored" data-anchor-id="grades">Grades</h3>
@@ -4035,43 +3996,43 @@ Adjusted grade: 67.5</code></pre>
 <section id="progress-visualization" class="level3">
 <h3 class="anchored" data-anchor-id="progress-visualization">Progress Visualization</h3>
 <p>The <code>visualize_program_progress()</code> function calculates how far along you are in the MDS program and saves a bar chart containing your progress to the <code>img/</code> folder. Also returns: - <code>capstone_progress_percentage</code>: progress from program start to the capstone start (0 to 1) - <code>completion_percentage</code>: progress from program start to the total program end (0 to 1)</p>
-<div id="893952fb" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.config <span class="im">import</span> PROGRAM_CONFIG_2025_2026</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pull the key dates from the config file </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>program_start <span class="op">=</span> PROGRAM_CONFIG_2025_2026[<span class="st">&quot;program_start&quot;</span>]</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>capstone_start <span class="op">=</span> PROGRAM_CONFIG_2025_2026[<span class="st">&quot;capstone&quot;</span>][<span class="st">&quot;start&quot;</span>]</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>program_end <span class="op">=</span> PROGRAM_CONFIG_2025_2026[<span class="st">&quot;program_end&quot;</span>]</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: If the current date = program start date: Progress equals 0.</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 1: current_date = program_start&quot;</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>capstone_completion_pct, program_completion_pct <span class="op">=</span> visualize_program_progress(current_date <span class="op">=</span> program_start)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Capstone progress:&quot;</span>, capstone_completion_pct) <span class="co"># Expected: 0</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Program progress:&quot;</span>, program_completion_pct) <span class="co"># Expected: 0</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: If the current date = capstone start date: Capstone progress should equal 1 and program end progress should be less than 1.</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 2: current_date = capstone_start&quot;</span>)</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>capstone_completion_pct, program_completion_pct <span class="op">=</span> visualize_program_progress(current_date <span class="op">=</span> capstone_start)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Capstone progress:&quot;</span>, capstone_completion_pct) <span class="co"># Expected: 1</span></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Program progress:&quot;</span>, program_completion_pct) <span class="co"># Expected: &lt;FLOAT&gt; &lt; 1</span></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 3: Passing in date strings (works the same as datetime.date)</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 3: passing date strings&quot;</span>)</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>capstone_completion_pct, program_completion_pct <span class="op">=</span> visualize_program_progress(</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  current_date <span class="op">=</span> <span class="st">&quot;January 1, 2026&quot;</span>,</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  program_start_date <span class="op">=</span> <span class="st">&quot;August 29, 2025&quot;</span>,</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  program_end_date <span class="op">=</span> <span class="st">&quot;June 30, 2026&quot;</span>,</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  capstone_start_date <span class="op">=</span> <span class="st">&quot;April 24, 2026&quot;</span></span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Capstone progress:&quot;</span>, capstone_completion_pct) <span class="co"># Expected: &lt;FLOAT&gt; &lt; 1</span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Program progress:&quot;</span>, program_completion_pct) <span class="co"># Expected: &lt;FLOAT&gt; &lt; 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="c02c516a" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ubc_mds_helper.config <span class="im">import</span> PROGRAM_CONFIG_2025_2026</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pull the key dates from the config file </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>program_start <span class="op">=</span> PROGRAM_CONFIG_2025_2026[<span class="st">&quot;program_start&quot;</span>]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>capstone_start <span class="op">=</span> PROGRAM_CONFIG_2025_2026[<span class="st">&quot;capstone&quot;</span>][<span class="st">&quot;start&quot;</span>]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>program_end <span class="op">=</span> PROGRAM_CONFIG_2025_2026[<span class="st">&quot;program_end&quot;</span>]</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 1: If the current date = program start date: Progress equals 0.</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 1: current_date = program_start&quot;</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>capstone_completion_pct, program_completion_pct <span class="op">=</span> visualize_program_progress(current_date <span class="op">=</span> program_start)</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Capstone progress:&quot;</span>, capstone_completion_pct) <span class="co"># Expected: 0</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Program progress:&quot;</span>, program_completion_pct) <span class="co"># Expected: 0</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 2: If the current date = capstone start date: Capstone progress should equal 1 and program end progress should be less than 1.</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 2: current_date = capstone_start&quot;</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>capstone_completion_pct, program_completion_pct <span class="op">=</span> visualize_program_progress(current_date <span class="op">=</span> capstone_start)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Capstone progress:&quot;</span>, capstone_completion_pct) <span class="co"># Expected: 1</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Program progress:&quot;</span>, program_completion_pct) <span class="co"># Expected: &lt;FLOAT&gt; &lt; 1</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Example 3: Passing in date strings (works the same as datetime.date)</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Example 3: passing date strings&quot;</span>)</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>capstone_completion_pct, program_completion_pct <span class="op">=</span> visualize_program_progress(</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  current_date <span class="op">=</span> <span class="st">&quot;January 1, 2026&quot;</span>,</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>  program_start_date <span class="op">=</span> <span class="st">&quot;August 29, 2025&quot;</span>,</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>  program_end_date <span class="op">=</span> <span class="st">&quot;June 30, 2026&quot;</span>,</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>  capstone_start_date <span class="op">=</span> <span class="st">&quot;April 24, 2026&quot;</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Capstone progress:&quot;</span>, capstone_completion_pct) <span class="co"># Expected: &lt;FLOAT&gt; &lt; 1</span></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Program progress:&quot;</span>, program_completion_pct) <span class="co"># Expected: &lt;FLOAT&gt; &lt; 1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Example 1: current_date = program_start
