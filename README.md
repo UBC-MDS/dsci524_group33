@@ -1,14 +1,8 @@
 # Welcome to ubc_mds_helper
 
-
-[![deploy-test-pypi](https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml)
-
-
-
-|        |        |
-|--------|--------|
-| Package | [![Latest PyPI Version](https://img.shields.io/pypi/v/ubc_mds_helper.svg)](https://pypi.org/project/ubc_mds_helper/) [![Supported Python Versions](https://img.shields.io/pypi/pyversions/ubc_mds_helper.svg)](https://pypi.org/project/ubc_mds_helper/)  |
-| Meta   | [![Code of Conduct](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) |
+[![CI](https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/dsci524_group33/actions)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md)
 
 ## Project Purpose
 
@@ -18,13 +12,13 @@ The MDS program follows 6 blocks of instruction, each consisting of 4 courses de
 
 With the large number of deadlines and the variability in workload across the 5 weeks within each block, it is difficult for students to get a sense of where they are in the program at a given time. This helper package provides date-based tools to describe a student's academic position, program phase, and progress, and support planning for personal commitments, absences, late submissions, and meeting course-level requirements. 
 
-This helper is based on a program cofiguration for the 2025/2026 cohort, and would need to be adapted for other program cycles.
+This helper is based on a program configuration for the 2025/2026 cohort, and would need to be adapted for other program cycles.
 
 There is no package that is specific to the MDS program. However, we will be using the python standard library of datetime and calendar to streamline date calculations and interpretations.
 
 ### Use case examples
 
-"I have a family committment to go to on December 2-4th, 2025. Am I able to make it work based on positioning in the 6 week cycle?"
+"I have a family commitment to go to on December 2-4th, 2025. Am I able to make it work based on positioning in the 6 week cycle?"
 
 "When is the next break for me to plan my holiday?"
 
@@ -58,7 +52,7 @@ There is no package that is specific to the MDS program. However, we will be usi
 *config.py*
 
 - Program info to be adjusted based on cohort cycle
-- This config file will be an arugment in some of relevant functions so that the hardcoding can be set in the config file and not in the functions themselves.
+- This config file will be an argument in some of relevant functions so that the hardcoding can be set in the config file and not in the functions themselves.
 
 ## Get started
 
@@ -157,7 +151,7 @@ and the end of the program.
 
 
 ```python
->>> ffrom ubc_mds_helper.progress import visualize_program_progress
+>>> from ubc_mds_helper.progress import visualize_program_progress
 >>> visualize_program_progress(
     current_date="January 1, 2026",
     program_start_date="August 26, 2025",
@@ -255,7 +249,7 @@ using GitHub Actions on pull requests and merges to `main`.
 
 ## Contributors
 
-Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar, Ian Gault
+Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar.
 
 Contributors are expected to follow the guidelines outlined in **[CONTRIBUTING.md](./CONTRIBUTING.md)**. Please review this document before submitting issues or pull requests.
 
