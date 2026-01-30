@@ -172,7 +172,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#functions" id="toc-functions" class="nav-link" data-scroll-target="#functions">Functions</a></li>
   <li><a href="#cycle-configuration" id="toc-cycle-configuration" class="nav-link" data-scroll-target="#cycle-configuration">Cycle Configuration</a></li>
   <li><a href="#get-started" id="toc-get-started" class="nav-link" data-scroll-target="#get-started">Get started</a></li>
-  <li><a href="#to-use-ubc_mds_helper-in-your-code" id="toc-to-use-ubc_mds_helper-in-your-code" class="nav-link" data-scroll-target="#to-use-ubc_mds_helper-in-your-code">To use ubc_mds_helper in your code:</a></li>
+  <li><a href="#to-use-ubc_mds_helper-in-your-code" id="toc-to-use-ubc_mds_helper-in-your-code" class="nav-link" data-scroll-target="#to-use-ubc_mds_helper-in-your-code">To use ubc_mds_helper in your code:</a>
+  <ul class="collapse">
+  <li><a href="#our-late_assignment-function" id="toc-our-late_assignment-function" class="nav-link" data-scroll-target="#our-late_assignment-function">Our late_assignment function</a></li>
+  <li><a href="#our-grade-function" id="toc-our-grade-function" class="nav-link" data-scroll-target="#our-grade-function">Our grade function</a></li>
+  <li><a href="#our-progress.visualize-function" id="toc-our-progress.visualize-function" class="nav-link" data-scroll-target="#our-progress.visualize-function">Our progress.visualize function</a></li>
+  <li><a href="#our-status-function" id="toc-our-status-function" class="nav-link" data-scroll-target="#our-status-function">Our status function</a></li>
+  </ul></li>
   <li><a href="#development-environment-conda" id="toc-development-environment-conda" class="nav-link" data-scroll-target="#development-environment-conda">Development environment (conda)</a>
   <ul class="collapse">
   <li><a href="#running-tests" id="toc-running-tests" class="nav-link" data-scroll-target="#running-tests">Running Tests</a></li>
@@ -268,54 +274,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="get-started" class="level2">
 <h2 class="anchored" data-anchor-id="get-started">Get started</h2>
-<p>To install this package for development or use:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UBC-MDS/dsci524_group33.git</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dsci524_group33</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[tests,dev,docs]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To install this package for use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-i</span> https://test.pypi.org/simple/ ubc-mds-helper</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To install this package for development:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UBC-MDS/dsci524_group33.git</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> dsci524_group33</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-e</span> <span class="st">".[tests,dev,docs]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This project uses Hatch to manage environments, run tests, and build documentation in a reproducible way via <code>pyproject.toml</code>.</p>
 <p>To create the default development environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> env create</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> env create</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="to-use-ubc_mds_helper-in-your-code" class="level2">
 <h2 class="anchored" data-anchor-id="to-use-ubc_mds_helper-in-your-code">To use ubc_mds_helper in your code:</h2>
-<p>Our late_assignment function</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.assessments <span class="im">import</span> late_assignment</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> late_assignment(<span class="dv">80</span>, <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Our grade function</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.grade <span class="im">import</span> needed_to_pass</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> needed_to_pass(<span class="st">"quiz"</span>, {<span class="st">"lab1"</span>: <span class="dv">80</span>, <span class="st">"lab2"</span>: <span class="dv">70</span>, <span class="st">"quiz1"</span>: <span class="dv">60</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Our progress.visualize function</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ffrom ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> visualize_program_progress(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    current_date<span class="op">=</span><span class="st">"January 1, 2026"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    program_start_date<span class="op">=</span><span class="st">"August 26, 2025"</span>,</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    program_end_date<span class="op">=</span><span class="st">"June 30, 2026"</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    capstone_start_date<span class="op">=</span><span class="st">"April 24, 2026"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Our status function</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.status <span class="im">import</span> status</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.config <span class="im">import</span> PROGRAM_CONFIG_2025_2026</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> status(PROGRAM_CONFIG_2025_2026, <span class="st">"March 20, 2026"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="our-late_assignment-function" class="level3">
+<h3 class="anchored" data-anchor-id="our-late_assignment-function">Our late_assignment function</h3>
+<p>This function evaluates a late submission according to the program policy. For higher-stakes assessments, the grade is scaled based on the cumulative number of late submissions. For lower-stakes assessments, late submissions are not accepted and receive a grade of zero.</p>
+<p>Inputs</p>
+<p>raw_grade (float or int) - The original grade before applying any late-submission penalty. late_count (int) - The number of late submissions prior to this one. is_lower_stakes (bool) - Indicates whether the assessment is lower-stakes. If True, the late submission is not accepted and receives zero points. Default is False.</p>
+<p>Outputs</p>
+<p>The final grade after applying the late-submission scaling.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.assessments <span class="im">import</span> late_assignment</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> late_assignment(<span class="dv">80</span>, <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="our-grade-function" class="level3">
+<h3 class="anchored" data-anchor-id="our-grade-function">Our grade function</h3>
+<p>This function helps students estimate the minimum grades needed on remaining course components to finish with at least 60%.</p>
+<p>Inputs course_type (str) - Course grading scheme. Must be <code>"quiz"</code> or <code>"project"</code>. grades (dict) - Dictionary mapping completed component names to earned grades (0 - 100).</p>
+<p>Outputs</p>
+<p>Dictionary mapping each remaining component to the minimum grade required on that component to reach at least 60%.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.grade <span class="im">import</span> needed_to_pass</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> needed_to_pass(<span class="st">"quiz"</span>, {<span class="st">"lab1"</span>: <span class="dv">80</span>, <span class="st">"lab2"</span>: <span class="dv">70</span>, <span class="st">"quiz1"</span>: <span class="dv">60</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="our-progress.visualize-function" class="level3">
+<h3 class="anchored" data-anchor-id="our-progress.visualize-function">Our progress.visualize function</h3>
+<p>This function visualizes program progress (in %) from a date to the capstone and program end date.</p>
+<p>Calculates the percentage of elapsed time between the program start date to the capstone start date and program end date of the UBC MDS program, and visualizes the result as a bar chart.</p>
+<p>Inputs:</p>
+<p>current_date (str or Python datetime object) - Date at which to visualize progress from. If None, defaults to today’s date. program_start_date (str or Python datetime object) - Start date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’]. program_end_date (str or Python datetime object) - End date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’]. capstone_start_date (str or Python datetime object) - Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].</p>
+<p>Outputs:</p>
+<p>capstone_progress_percentage and completion_percentage. This function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the <code>img/</code> directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ffrom ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> visualize_program_progress(</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    current_date<span class="op">=</span><span class="st">"January 1, 2026"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    program_start_date<span class="op">=</span><span class="st">"August 26, 2025"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    program_end_date<span class="op">=</span><span class="st">"June 30, 2026"</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    capstone_start_date<span class="op">=</span><span class="st">"April 24, 2026"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="our-status-function" class="level3">
+<h3 class="anchored" data-anchor-id="our-status-function">Our status function</h3>
+<p>This function returns program status for a given date.</p>
+<p>Inputs:</p>
+<p>config (config.py) - Contains program date information, block structure, and break periods. date_input (str or Python datetime object) - Date at which program status is based upon. If None, defaults to today’s date.</p>
+<p>Outputs:</p>
+<p>Dictionary describing academic position based on date.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.status <span class="im">import</span> status</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.config <span class="im">import</span> PROGRAM_CONFIG_2025_2026</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> status(PROGRAM_CONFIG_2025_2026, <span class="st">"March 20, 2026"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Extensive documentation for each function including more example uses can be found on our website https://ubc-mds.github.io/dsci524_group33/</p>
+</section>
 </section>
 <section id="development-environment-conda" class="level2">
 <h2 class="anchored" data-anchor-id="development-environment-conda">Development environment (conda)</h2>
 <p>A conda environment is provided for development and testing.</p>
 <p>To create the environment:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ubc_mds_helper</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate ubc_mds_helper</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="running-tests" class="level3">
 <h3 class="anchored" data-anchor-id="running-tests">Running Tests</h3>
 <p>To run the full test suite with coverage reporting:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run test:run</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">hatch</span> run test:run</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="code-style" class="level3">
 <h3 class="anchored" data-anchor-id="code-style">Code Style</h3>
 <p>The project uses ruff for formatting.</p>
 <p>To check formatting</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> check .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> check .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To format files:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> format .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ruff</span> format .</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="documentation" class="level2">
@@ -323,11 +359,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="build-documentation-locally" class="level3">
 <h3 class="anchored" data-anchor-id="build-documentation-locally">Build documentation locally</h3>
 <p>To generate the API reference pages using quartodoc:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quartodoc</span> build <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quartodoc</span> build <span class="at">--verbose</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To render and preview the documentation:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>To preview the documentation locally:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 </section>
 <section id="continuous-integration" class="level2">
