@@ -62,7 +62,13 @@ There is no package that is specific to the MDS program. However, we will be usi
 
 ## Get started
 
-To install this package for development or use:
+To install this package for use:
+
+```bash
+pip install -i https://test.pypi.org/simple/ ubc-mds-helper
+```
+
+To install this package for development:
 
 ```bash
 git clone https://github.com/UBC-MDS/dsci524_group33.git
@@ -85,8 +91,8 @@ Our late_assignment function
 ```python
 >>> from ubc_mds_helper.assessments import late_assignment
 >>> late_assignment(80, 0)
-
 ```
+
 Our grade function
 ```python
 >>> from ubc_mds_helper.grade import needed_to_pass
