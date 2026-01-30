@@ -52,6 +52,17 @@ adjusted_grade = late_assignment(
 )
 print("Adjusted grade:", adjusted_grade)  # Expected: 85
 
+# Example 2: late submission with no prior late submissions
+print("\nExample 2: late submission with no prior late submissions")
+adjusted_grade = late_assignment(
+    raw_grade=90,
+    late_count=0,
+    is_lower_stakes=False,
+    days_late=2
+)
+print("Adjusted grade:", adjusted_grade)  # Expected: 80.0
+
+
 
 ### Grades
 
