@@ -211,34 +211,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="welcome-to-ubc_mds_helper" class="level1">
 <h1>Welcome to ubc_mds_helper</h1>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml"><img src="https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml/badge.svg" class="img-fluid figure-img"></a></p>
-<figcaption>deploy-test-pypi</figcaption>
-</figure>
-</div>
-<table class="caption-top table">
-<tbody>
-<tr class="odd">
-<td>Package</td>
-<td><a href="https://pypi.org/project/ubc_mds_helper/"><img src="https://img.shields.io/pypi/v/ubc_mds_helper.svg" class="img-fluid" alt="Latest PyPI Version"></a> <a href="https://pypi.org/project/ubc_mds_helper/"><img src="https://img.shields.io/pypi/pyversions/ubc_mds_helper.svg" class="img-fluid" alt="Supported Python Versions"></a></td>
-</tr>
-<tr class="even">
-<td>Meta</td>
-<td><a href="./CODE_OF_CONDUCT.html"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" class="img-fluid" alt="Code of Conduct"></a></td>
-</tr>
-</tbody>
-</table>
+<p><a href="https://github.com/UBC-MDS/dsci524_group33/actions"><img src="https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml/badge.svg" class="img-fluid" alt="CI"></a> <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.10%2B-blue" class="img-fluid" alt="Python"></a> <a href="./CODE_OF_CONDUCT.html"><img src="https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg" class="img-fluid" alt="Contributor Covenant"></a></p>
 <section id="project-purpose" class="level2">
 <h2 class="anchored" data-anchor-id="project-purpose">Project Purpose</h2>
 <p>ubc_mds_helper is a project that helps students in the UBC Masters of Data Science (MDS) program better understand and plan their academic timeline.</p>
 <p>The MDS program follows 6 blocks of instruction, each consisting of 4 courses delivered over a standard cycle of 5 weeks. At the end of the 6 blocks, a 2 month capstones project is required to complete the program, resulting in a total program length of 10 months.</p>
 <p>With the large number of deadlines and the variability in workload across the 5 weeks within each block, it is difficult for students to get a sense of where they are in the program at a given time. This helper package provides date-based tools to describe a student’s academic position, program phase, and progress, and support planning for personal commitments, absences, late submissions, and meeting course-level requirements.</p>
-<p>This helper is based on a program cofiguration for the 2025/2026 cohort, and would need to be adapted for other program cycles.</p>
+<p>This helper is based on a program configuration for the 2025/2026 cohort, and would need to be adapted for other program cycles.</p>
 <p>There is no package that is specific to the MDS program. However, we will be using the python standard library of datetime and calendar to streamline date calculations and interpretations.</p>
 <section id="use-case-examples" class="level3">
 <h3 class="anchored" data-anchor-id="use-case-examples">Use case examples</h3>
-<p>“I have a family committment to go to on December 2-4th, 2025. Am I able to make it work based on positioning in the 6 week cycle?”</p>
+<p>“I have a family commitment to go to on December 2-4th, 2025. Am I able to make it work based on positioning in the 6 week cycle?”</p>
 <p>“When is the next break for me to plan my holiday?”</p>
 <p>“I failed the first quiz, and need to make sure I pass the course. What do I have to get on the second quiz?”</p>
 <p>“I already have 2 late assignments. What penalty will I receive on the next late assignment?”</p>
@@ -277,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>config.py</em></p>
 <ul>
 <li>Program info to be adjusted based on cohort cycle</li>
-<li>This config file will be an arugment in some of relevant functions so that the hardcoding can be set in the config file and not in the functions themselves.</li>
+<li>This config file will be an argument in some of relevant functions so that the hardcoding can be set in the config file and not in the functions themselves.</li>
 </ul>
 </section>
 <section id="get-started" class="level2">
@@ -321,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>current_date (str or Python datetime object) - Date at which to visualize progress from. If None, defaults to today’s date. program_start_date (str or Python datetime object) - Start date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’]. program_end_date (str or Python datetime object) - End date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’]. capstone_start_date (str or Python datetime object) - Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].</p>
 <p>Outputs:</p>
 <p>capstone_progress_percentage and completion_percentage. This function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the <code>img/</code> directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> ffrom ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> visualize_program_progress(</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    current_date<span class="op">=</span><span class="st">"January 1, 2026"</span>,</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    program_start_date<span class="op">=</span><span class="st">"August 26, 2025"</span>,</span>
@@ -380,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="contributors" class="level2">
 <h2 class="anchored" data-anchor-id="contributors">Contributors</h2>
-<p>Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar, Ian Gault</p>
+<p>Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar.</p>
 <p>Contributors are expected to follow the guidelines outlined in <strong><a href="./CONTRIBUTING.html">CONTRIBUTING.md</a></strong>. Please review this document before submitting issues or pull requests.</p>
 </section>
 <section id="copyright" class="level2">
