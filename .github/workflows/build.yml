@@ -39,3 +39,12 @@ jobs:
           
       - name: Run test suite with coverage
         run: hatch run +py=${{ matrix.python-version }} test:run
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          files: ./coverage.xml
+          flags: ${{ matrix.os }}-py${{ matrix.python-version }}
+          fail_ci_if_error: true
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
