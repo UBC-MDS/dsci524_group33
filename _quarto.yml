@@ -9,13 +9,14 @@ project:
     - CODE_OF_CONDUCT.md
     - CONTRIBUTING.md
     - README.md
+    - tutorial.qmd
 
 website:
   title: "ubc_mds_helper"
   navbar:
     left:
       - text: "Home"
-        href: index.qmd
+        href: README.md
       - text: "Reference"
         href: reference/api/index.qmd
       - text: "Project"
@@ -26,6 +27,9 @@ website:
             href: CODE_OF_CONDUCT.md
           - text: "README"
             href: README.md
+          - text: "Tutorial"
+            href: tutorial.qmd
+
         
 format:
   html:
