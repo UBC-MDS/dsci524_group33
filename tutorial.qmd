@@ -1,0 +1,34 @@
+---
+title: "ubc_mds_helper Tutorial"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    embed-resources: true
+---
+
+## Tools to help navigate MDS
+
+ubc_mds_helper is a project that helps students in the UBC Masters of Data Science (MDS) program better understand and plan their academic timeline.
+
+With the large number of deadlines and the variability in workload across the 5 weeks within each block, it is difficult for students to get a sense of where they are in the program at a given time. This helper package provides date-based tools to describe a student's academic position, program phase, and progress, and support planning for personal commitments, absences, late submissions, and meeting course-level requirements. 
+
+### Status
+
+We set up our date configuration to the 2025/2026 cycle, as shown in config.py.
+
+If other years are needed, the config.py file would need to be updated.
+
+```{python}
+from ubc_mds_helper.status import status
+from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
+
+status(PROGRAM_CONFIG_2025_2026, "March 20, 2026")
+
+```
+
+### Assessments
+
+### Grades
+
+### Progress Visualization
