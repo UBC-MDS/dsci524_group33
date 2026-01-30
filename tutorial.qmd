@@ -27,7 +27,10 @@ status(PROGRAM_CONFIG_2025_2026, "January 15, 2026")
 
 ```
 
-### Assessments
+### Assessment
+
+The `late_assignment()` function applies the UBC MDS late-submission policy.
+
 
 ### Grades
 
