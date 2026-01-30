@@ -55,5 +55,7 @@ def test_raw_grade_out_of_bounds_is_scaled():
     
 def test_negative_raw_grade_raises_error():
     """Test that a negative raw grade raises a ValueError."""
+    with pytest.raises(ValueError):
+        late_assignment(raw_grade=-5, late_count=0, is_lower_stakes=False)
 
     
