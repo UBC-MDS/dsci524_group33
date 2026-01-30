@@ -96,13 +96,19 @@ are not accepted and receive a grade of zero.
     If `True`, the late submission is not accepted and receives zero points. 
     Default is `False`.
 
-Outputs 
+**Outputs** 
 
-The final grade after applying the late-submission scaling. 
+- `float`: the final grade after applying the late-submission scaling. 
+
+**Example**
 
 ```python
 >>> from ubc_mds_helper.assessments import late_assignment
 >>> late_assignment(80, 0)
+# Status: Late (1st occurrence)
+# Late count: 1
+# Scaling factor: 0.75
+# 60.0
 ```
 
 
