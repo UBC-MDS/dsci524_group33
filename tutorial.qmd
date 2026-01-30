@@ -63,7 +63,6 @@ adjusted_grade = late_assignment(
 print("Adjusted grade:", adjusted_grade)  # Expected: 80.0
 
 
-
 ### Grades
 
 ### Progress Visualization
