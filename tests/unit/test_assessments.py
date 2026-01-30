@@ -52,3 +52,8 @@ def test_raw_grade_out_of_bounds_is_scaled():
 
     assert isinstance(grade_high, float)
     assert isinstance(grade_low, float)
+    
+def test_negative_raw_grade_raises_error():
+    """Test that a negative raw grade raises a ValueError."""
+
+    
