@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/README.html</loc>
-    <lastmod>2026-01-30T04:10:43.032Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/CODE_OF_CONDUCT.html</loc>
-    <lastmod>2026-01-30T04:10:43.032Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/progress.visualize_program_progress.html</loc>
-    <lastmod>2026-01-30T04:11:09.437Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/assessments.late_assignment.html</loc>
-    <lastmod>2026-01-30T04:11:09.422Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/index.html</loc>
-    <lastmod>2026-01-30T04:10:43.033Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/index.html</loc>
-    <lastmod>2026-01-30T04:11:09.391Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/grade.needed_to_pass.html</loc>
-    <lastmod>2026-01-30T04:11:09.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/status.status.html</loc>
-    <lastmod>2026-01-30T04:11:09.442Z</lastmod>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/tutorial.html</loc>
+    <lastmod>2026-01-30T05:39:47.303Z</lastmod>
   </url>
   <url>
     <loc>https://UBC-MDS.github.io/dsci524_group33/CONTRIBUTING.html</loc>
-    <lastmod>2026-01-30T04:10:43.032Z</lastmod>
+    <lastmod>2026-01-30T05:39:47.299Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/status.status.html</loc>
+    <lastmod>2026-01-30T05:40:30.658Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/grade.needed_to_pass.html</loc>
+    <lastmod>2026-01-30T05:40:30.645Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/index.html</loc>
+    <lastmod>2026-01-30T05:40:30.606Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/index.html</loc>
+    <lastmod>2026-01-30T05:39:47.300Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/assessments.late_assignment.html</loc>
+    <lastmod>2026-01-30T05:40:30.637Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/reference/api/progress.visualize_program_progress.html</loc>
+    <lastmod>2026-01-30T05:40:30.652Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/CODE_OF_CONDUCT.html</loc>
+    <lastmod>2026-01-30T05:39:47.299Z</lastmod>
+  </url>
+  <url>
+    <loc>https://UBC-MDS.github.io/dsci524_group33/README.html</loc>
+    <lastmod>2026-01-30T05:39:47.299Z</lastmod>
   </url>
 </urlset>
