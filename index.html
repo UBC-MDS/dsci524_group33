@@ -280,12 +280,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="our-late_assignment-function" class="level3">
 <h3 class="anchored" data-anchor-id="our-late_assignment-function">Our late_assignment function</h3>
 <p>This function evaluates a late submission according to the program policy. For higher-stakes assessments, the grade is scaled based on the cumulative number of late submissions. For lower-stakes assessments, late submissions are not accepted and receive a grade of zero.</p>
-<p>Inputs</p>
-<p>raw_grade (float or int) - The original grade before applying any late-submission penalty. late_count (int) - The number of late submissions prior to this one. is_lower_stakes (bool) - Indicates whether the assessment is lower-stakes. If True, the late submission is not accepted and receives zero points. Default is False.</p>
-<p>Outputs</p>
-<p>The final grade after applying the late-submission scaling.</p>
+<p><strong>Inputs</strong></p>
+<ul>
+<li><code>raw_grade</code> (float or int): The original grade before applying any late-submission penalty.</li>
+<li><code>late_count</code> (int): The number of late submissions prior to this one.</li>
+<li><code>is_lower_stakes</code> (bool): Indicates whether the assessment is lower-stakes. If <code>True</code>, the late submission is not accepted and receives zero points. Default is <code>False</code>.</li>
+</ul>
+<p><strong>Outputs</strong></p>
+<ul>
+<li><code>float</code>: the final grade after applying the late-submission scaling.</li>
+</ul>
+<p><strong>Example</strong></p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.assessments <span class="im">import</span> late_assignment</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> late_assignment(<span class="dv">80</span>, <span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> late_assignment(<span class="dv">80</span>, <span class="dv">0</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Status: Late (1st occurrence)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Late count: 1</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Scaling factor: 0.75</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 60.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="our-grade-function" class="level3">
 <h3 class="anchored" data-anchor-id="our-grade-function">Our grade function</h3>
