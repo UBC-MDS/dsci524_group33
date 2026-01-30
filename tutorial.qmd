@@ -23,7 +23,7 @@ If other years are needed, the config.py file would need to be updated.
 from ubc_mds_helper.status import status
 from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
 
-status(PROGRAM_CONFIG_2025_2026, "March 20, 2026")
+status(PROGRAM_CONFIG_2025_2026, "January 15, 2026")
 
 ```
 
