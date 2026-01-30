@@ -32,3 +32,48 @@ status(PROGRAM_CONFIG_2025_2026, "January 15, 2026")
 ### Grades
 
 ### Progress Visualization
+
+The `visualize_program_progress()` function calculates how far along you are in the MDS program and saves a bar chart containing your progress to the `img/` folder. Also returns: 
+  - `capstone_progress_percentage`: progress from program start to the capstone start (0 to 1)
+  - `completion_percentage`: progress from program start to the total program end (0 to 1)
+
+```{python}
+from ubc_mds_helper.progress import visualize_program_progress
+from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
+
+# pull the key dates from the config file 
+program_start = PROGRAM_CONFIG_2025_2026["program_start"]
+capstone_start = PROGRAM_CONFIG_2025_2026["capstone"]["start"]
+program_end = PROGRAM_CONFIG_2025_2026["program_end"]
+
+# Example 1: If the current date = program start date: Progress equals 0.
+print("\nExample 1: current_date = program_start")
+
+capstone_completion_pct, program_completion_pct = visualize_program_progress(current_date = program_start)
+
+print("Capstone progress:", capstone_completion_pct) # Expected: 0
+print("Program progress:", program_completion_pct) # Expected: 0
+
+# Example 2: If the current date = capstone start date: Capstone progress should equal 1 and program end progress should be less than 1.
+print("\nExample 2: current_date = capstone_start")
+
+capstone_completion_pct, program_completion_pct = visualize_program_progress(current_date = capstone_start)
+
+print("Capstone progress:", capstone_completion_pct) # Expected: 1
+print("Program progress:", program_completion_pct) # Expected: <FLOAT> < 1
+
+# Example 3: Passing in date strings (works the same as datetime.date)
+print("\nExample 3: passing date strings")
+
+capstone_completion_pct, program_completion_pct = visualize_program_progress(
+  current_date = "January 1, 2026",
+  program_start_date = "August 29, 2025",
+  program_end_date = "June 30, 2026",
+  capstone_start_date = "April 24, 2026"
+)
+
+print("Capstone progress:", capstone_completion_pct) # Expected: <FLOAT> < 1
+print("Program progress:", program_completion_pct) # Expected: <FLOAT> < 1
+```
+
+Keep in mind, the function also saves the progress bar chart to the img/ folder with the timestamp of the current date appended.
