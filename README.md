@@ -1,8 +1,8 @@
 # Welcome to ubc_mds_helper
 
+[![codecov](https://codecov.io/github/UBC-MDS/dsci524_group33/graph/badge.svg?token=QXvJcWGDv6)](https://codecov.io/github/UBC-MDS/dsci524_group33)
 
 [![deploy-test-pypi](https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/dsci524_group33/actions/workflows/deploy.yml)
-
 
 
 |        |        |
