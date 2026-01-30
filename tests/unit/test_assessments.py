@@ -5,6 +5,8 @@ Author: Valeria
 
 Date: January 15, 2026
 """
+import pytest
+
 
 from ubc_mds_helper.assessments import late_assignment
 
