@@ -87,19 +87,75 @@ hatch env create
 
 ## To use ubc_mds_helper in your code:
 
-Our late_assignment function 
+### Our late_assignment function 
+
+This function evaluates a late submission according to the program policy.
+For higher-stakes assessments, the grade is scaled based on the cumulative
+number of late submissions. For lower-stakes assessments, late submissions
+are not accepted and receive a grade of zero.
+    
+Inputs
+
+raw_grade (float or int) - The original grade before applying any late-submission penalty.
+late_count (int) - The number of late submissions prior to this one.
+is_lower_stakes (bool) - Indicates whether the assessment is lower-stakes. If True, the late
+submission is not accepted and receives zero points. Default is False.
+
+Outputs 
+
+The final grade after applying the late-submission scaling. 
+
 ```python
 >>> from ubc_mds_helper.assessments import late_assignment
 >>> late_assignment(80, 0)
 ```
 
-Our grade function
+
+### Our grade function
+
+This function helps students estimate the minimum grades
+needed on remaining course components to finish with at least 60%.
+
+
+Inputs 
+course_type (str) - Course grading scheme. Must be `"quiz"` or `"project"`.
+grades (dict) - Dictionary mapping completed component names to earned grades (0 - 100).
+
+
+Outputs
+
+Dictionary mapping each remaining component to the minimum grade required
+on that component to reach at least 60%.
+
 ```python
 >>> from ubc_mds_helper.grade import needed_to_pass
 >>> needed_to_pass("quiz", {"lab1": 80, "lab2": 70, "quiz1": 60})
 ```
 
-Our progress.visualize function
+### Our progress.visualize function
+
+This function visualizes program progress (in %) from a date to the capstone and program end date.
+
+Calculates the percentage of elapsed time between the program start date to the capstone start date and program end date
+of the UBC MDS program, and visualizes the result as a bar chart.
+
+Inputs:
+
+current_date (str or Python datetime object) - Date at which to visualize progress from. If None, defaults to today's date.
+program_start_date (str or Python datetime object) - Start date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026['program_start'].
+program_end_date (str or Python datetime object) - End date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026['program_end'].
+capstone_start_date (str or Python datetime object) - Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026['capstone']['start'].
+
+Outputs:
+
+capstone_progress_percentage and completion_percentage.
+This function saves a bar chart visualizing progress toward the
+capstone and the end of the program. The figure is saved to the `img/`
+directory with the current date appended to the filename. The function also
+returns the proportion of progress that is left until the start of the capstone
+and the end of the program.
+
+
 ```python
 >>> ffrom ubc_mds_helper.progress import visualize_program_progress
 >>> visualize_program_progress(
@@ -110,7 +166,20 @@ Our progress.visualize function
 )
 ```
 
-Our status function
+### Our status function
+
+This function returns program status for a given date.
+
+Inputs:
+
+config (config.py) - Contains program date information, block structure, and break periods.
+date_input (str or Python datetime object) - Date at which program status is based upon.
+If None, defaults to today's date.
+
+Outputs:
+
+Dictionary describing academic position based on date.
+
 ```python
 >>> from ubc_mds_helper.status import status
 >>> from ubc_mds_helper.config import PROGRAM_CONFIG_2025_2026
