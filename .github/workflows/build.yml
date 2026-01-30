@@ -11,6 +11,9 @@ on:
 jobs:
   test:
     runs-on: ${{ matrix.os }}
+
+    env:
+      MPLBACKEND: Agg # fixes bug to prevent Tkinter from being invoked and a test failing because of this
     strategy:
       fail-fast: false
       matrix:
