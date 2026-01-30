@@ -16,7 +16,7 @@ website:
   navbar:
     left:
       - text: "Home"
-        href: index.qmd
+        href: README.md
       - text: "Reference"
         href: reference/api/index.qmd
       - text: "Project"
