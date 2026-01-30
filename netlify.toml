@@ -1,0 +1,4 @@
+[build]
+  command = "npm i -g @quarto/cli && quarto render"
+  publish = "docs"
+
