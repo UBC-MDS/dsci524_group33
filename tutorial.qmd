@@ -27,7 +27,41 @@ status(PROGRAM_CONFIG_2025_2026, "January 15, 2026")
 
 ```
 
-### Assessments
+### Assessment
+
+The `late_assignment()` function applies the UBC MDS late-submission policy.
+
+It prints the late penalty applied to an assignment based on the number of days it is late, and returns the adjusted grade.
+
+**Inputs**
+- `raw_grade` (float or int): original grade (0–100)
+- `late_count` (int): number of previous late submissions
+- `is_lower_stakes` (bool): if True, late submissions are not accepted for lower-stakes assignments (e.g., quizzes, labs)
+
+**Outputs**
+- `float`: grade after the late-submission scaling is applied
+
+```{python}
+from ubc_mds_helper.assessments import late_assignment
+
+# Example 1: on-time submission
+print("\nExample 1: on-time submission")
+adjusted_grade = late_assignment(
+    raw_grade=85,
+    late_count=0,
+    is_lower_stakes=False
+)
+print("Adjusted grade:", adjusted_grade)  # Expected: 85
+
+# Example 2: late submission with no prior late submissions
+print("\nExample 2: late submission with no prior late submissions")
+adjusted_grade = late_assignment(
+    raw_grade=90,
+    late_count=0,
+    is_lower_stakes=False
+)
+print("Adjusted grade:", adjusted_grade)  # Expected: 80.0
+```
 
 ### Grades
 

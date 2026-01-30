@@ -88,20 +88,27 @@ For higher-stakes assessments, the grade is scaled based on the cumulative
 number of late submissions. For lower-stakes assessments, late submissions
 are not accepted and receive a grade of zero.
     
-Inputs
+**Inputs**
 
-raw_grade (float or int) - The original grade before applying any late-submission penalty.
-late_count (int) - The number of late submissions prior to this one.
-is_lower_stakes (bool) - Indicates whether the assessment is lower-stakes. If True, the late
-submission is not accepted and receives zero points. Default is False.
+- `raw_grade` (float or int): The original grade before applying any late-submission penalty.
+- `late_count` (int): The number of late submissions prior to this one.
+- `is_lower_stakes` (bool): Indicates whether the assessment is lower-stakes. 
+    If `True`, the late submission is not accepted and receives zero points. 
+    Default is `False`.
 
-Outputs 
+**Outputs** 
 
-The final grade after applying the late-submission scaling. 
+- `float`: the final grade after applying the late-submission scaling. 
+
+**Example**
 
 ```python
 >>> from ubc_mds_helper.assessments import late_assignment
 >>> late_assignment(80, 0)
+# Status: Late (1st occurrence)
+# Late count: 1
+# Scaling factor: 0.75
+# 60.0
 ```
 
 
