@@ -61,7 +61,7 @@ adjusted_grade = late_assignment(
     days_late=2
 )
 print("Adjusted grade:", adjusted_grade)  # Expected: 80.0
-
+```
 
 ### Grades
 
