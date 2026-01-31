@@ -118,12 +118,12 @@ This function helps students estimate the minimum grades
 needed on remaining course components to finish with at least 60%.
 
 
-Inputs 
+**Inputs** 
 course_type (str) - Course grading scheme. Must be `"quiz"` or `"project"`.
 grades (dict) - Dictionary mapping completed component names to earned grades (0 - 100).
 
 
-Outputs
+**Outputs**
 
 Dictionary mapping each remaining component to the minimum grade required
 on that component to reach at least 60%.
@@ -140,14 +140,14 @@ This function visualizes program progress (in %) from a date to the capstone and
 Calculates the percentage of elapsed time between the program start date to the capstone start date and program end date
 of the UBC MDS program, and visualizes the result as a bar chart.
 
-Inputs:
+**Inputs**
 
 current_date (str or Python datetime object) - Date at which to visualize progress from. If None, defaults to today's date.
 program_start_date (str or Python datetime object) - Start date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026['program_start'].
 program_end_date (str or Python datetime object) - End date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026['program_end'].
 capstone_start_date (str or Python datetime object) - Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026['capstone']['start'].
 
-Outputs:
+**Outputs**
 
 capstone_progress_percentage and completion_percentage.
 This function saves a bar chart visualizing progress toward the
@@ -171,13 +171,13 @@ and the end of the program.
 
 This function returns program status for a given date.
 
-Inputs:
+**Inputs**
 
 config (config.py) - Contains program date information, block structure, and break periods.
 date_input (str or Python datetime object) - Date at which program status is based upon.
 If None, defaults to today's date.
 
-Outputs:
+**Outputs**
 
 Dictionary describing academic position based on date.
 
