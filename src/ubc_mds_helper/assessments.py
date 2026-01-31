@@ -63,6 +63,8 @@ def late_assignment(raw_grade, late_count, is_lower_stakes=False):
 
     if late_count < 0:
         raise ValueError("late_count must be a non-negative integer.")
+    if raw_grade < 0:
+        raise ValueError("raw_grade must be non-negative.")
     if is_lower_stakes:
         scaling = 0.0
         status = "Late not accepted (lower-stakes)"

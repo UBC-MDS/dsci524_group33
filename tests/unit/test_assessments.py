@@ -5,6 +5,8 @@ Author: Valeria
 
 Date: January 15, 2026
 """
+import pytest
+
 
 from ubc_mds_helper.assessments import late_assignment
 
@@ -44,11 +46,10 @@ def test_negative_late_count_raises_error():
     except ValueError:
         pass
 
+    
+def test_negative_raw_grade_raises_error():
+    """Test that a negative raw grade raises a ValueError."""
+    with pytest.raises(ValueError):
+        late_assignment(raw_grade=-5, late_count=0, is_lower_stakes=False)
 
-def test_raw_grade_out_of_bounds_is_scaled():
-    """Test that raw grades outside 0–100 are still handled without errors."""
-    grade_high = late_assignment(raw_grade=110, late_count=1, is_lower_stakes=False)
-    grade_low = late_assignment(raw_grade=-10, late_count=1, is_lower_stakes=False)
-
-    assert isinstance(grade_high, float)
-    assert isinstance(grade_low, float)
+    
