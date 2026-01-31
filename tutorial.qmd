@@ -114,24 +114,14 @@ from ubc_mds_helper.grade import needed_to_pass
 
 needed_to_pass("quiz", {"lab1": 80, "lab2": 70, "quiz1": 60})
 ```
-Expected 0utput: 
-
-{"lab3": 52.5, "lab4": 52.5, "quiz2": 52.5}
-
 
 2. Project based course
-
-Input:
 
 ```{python}
 from ubc_mds_helper.grade import needed_to_pass
 
 needed_to_pass("project", {"Milestone1": 80})
 ```
-
-Expected output: 
-
-{'IndividualAssignment1': 55.0, 'IndividualAssignment2': 55.0, 'Milestone2': 55.0, 'IndividualAssignment3': 55.0, 'Milestone3': 55.0, 'IndividualAssignment4': 55.0, 'Milestone4': 55.0}
 
 Have fun using it!
 
