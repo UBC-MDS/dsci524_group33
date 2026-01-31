@@ -65,6 +65,77 @@ print("Adjusted grade:", adjusted_grade)  # Expected: 80.0
 
 ### Grades
 
+The needed_to_pass() function helps you answer a very practical question:
+
+“Given the grades I already have, what minimum grade do I need on each remaining component to finish the course with at least 60%?”
+
+It assumes you will earn the same grade on every remaining component, and returns that required grade for each remaining item.
+
+
+What grading schemes are supported?
+
+needed_to_pass() supports two course grading layouts, selected by course_type:
+1. course_type="quiz"
+
+lab1, lab2, lab3, lab4 are 12.5% each
+quiz1, quiz2 are 25% each
+
+2. course_type="project"
+
+Milestone1 - Milestone4 are 20% each
+IndividualAssignment1 - IndividualAssignment4 are 5% each
+
+Inputs
+1. course_type: string
+Must be exactly: "quiz" or "project"
+
+grades: dictionary
+A dictionary of completed components → grade earned (0–100).
+Example: {"lab1": 80, "quiz1": 70}
+
+Dictionary rules:
+- keys must be strings (component names)
+- values must be numbers (int/float)
+- grades must be between 0 and 100
+
+Output
+The function returns a dict of remaining components mapped to the minimum grade needed on each (same value for all remaining components).
+
+Example output: {"lab3": 52.5, "lab4": 52.5, "quiz2": 52.5}
+
+Usage examples:
+
+1. Quiz based course
+
+Input:
+
+```{python}
+from ubc_mds_helper.grade import needed_to_pass
+
+needed_to_pass("quiz", {"lab1": 80, "lab2": 70, "quiz1": 60})
+```
+Expected 0utput: 
+
+{"lab3": 52.5, "lab4": 52.5, "quiz2": 52.5}
+
+
+2. Project based course
+
+Input:
+
+```{python}
+from ubc_mds_helper.grade import needed_to_pass
+
+needed_to_pass("project", {"Milestone1": 80})
+```
+
+Expected output: 
+
+{'IndividualAssignment1': 55.0, 'IndividualAssignment2': 55.0, 'Milestone2': 55.0, 'IndividualAssignment3': 55.0, 'Milestone3': 55.0, 'IndividualAssignment4': 55.0, 'Milestone4': 55.0}
+
+Have fun using it!
+
+
 ### Progress Visualization
 
 The `visualize_program_progress()` function calculates how far along you are in the MDS program and saves a bar chart containing your progress to the `img/` folder. Also returns: 
