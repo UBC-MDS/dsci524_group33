@@ -256,8 +256,6 @@ using GitHub Actions on pull requests and merges to `main`.
 
 ## Contributors
 
-Valeria Siciliano, Michael Kmetiuk, Ian Gault, Jasjot Parmar.
-
 Contributors are expected to follow the guidelines outlined in **[CONTRIBUTING.md](./CONTRIBUTING.md)**. Please review this document before submitting issues or pull requests.
 
 ## Copyright
