@@ -15,9 +15,9 @@ from ubc_mds_helper.helper_functions import progress_percentage
 
 # got syntax help with validating the exception message from the Assertions about expected exceptions section from PyTest docs: https://docs.pytest.org/en/7.1.x/how-to/assert.html
 def test_non_date_str_parameter():
-    '''
+    """
     Test that function raises an error if one of the dates passed in are not a date object or string
-    '''
+    """
     with pytest.raises(TypeError) as exception_info:
         visualize_program_progress(date.today(), "August 26, 2025", "June 30, 2026", 1)
 
@@ -26,9 +26,9 @@ def test_non_date_str_parameter():
 
 
 def test_curr_date_equals_end():
-    '''
+    """
     Test that when the current date is equal to the program start date, the program and capstone progress should return 0
-    '''
+    """
     capstone_progess_percentage, completion_percentage = visualize_program_progress(
         current_date=PROGRAM_CONFIG_2025_2026["program_start"]
     )
@@ -39,9 +39,9 @@ def test_curr_date_equals_end():
 
 
 def test_curr_date_equals_capstone():
-    '''
+    """
     Test that when the currnt date is equal to the capstone start date, capstone progress should be 1
-    '''
+    """
     capstone_progess_percentage, completion_percentage = visualize_program_progress(
         current_date=PROGRAM_CONFIG_2025_2026["capstone"]["start"]
     )
@@ -52,9 +52,9 @@ def test_curr_date_equals_capstone():
 
 
 def test_curr_date_equals_program_end():
-    '''
+    """
     Test that when the current date is equal to the program end date, the program progress should be 1 and the capstone start date should be 1 as we clipped these values to be [0, 1]
-    '''
+    """
     capstone_progess_percentage, completion_percentage = visualize_program_progress(
         current_date=PROGRAM_CONFIG_2025_2026["program_end"]
     )
@@ -65,9 +65,9 @@ def test_curr_date_equals_program_end():
 
 
 def test_curr_date_before_program_start():
-    '''
+    """
     Test when the current date is before the program start date, the capstone and program progress should be 0 and not negative
-    '''
+    """
     capstone_progess_percentage, completion_percentage = visualize_program_progress(
         current_date="August 26, 2025"
     )  # plug in a current date before the program start date of August, 29, 2025 in config.py
@@ -78,9 +78,9 @@ def test_curr_date_before_program_start():
 
 
 def test_no_parameters():
-    '''
+    """
     Test that if there are no dates passed in, the current date should default to today's date and calculate the progress from the default program_start_date, program_end_date, and capstone_start_date in config.py
-    '''
+    """
     capstone_progess_percentage, completion_percentage = visualize_program_progress()
 
     # set the current date and grab the program_start_date, program_end_date and capstone_start_date from config
@@ -104,9 +104,9 @@ def test_no_parameters():
 
 
 def test_invalid_date_string():
-    '''
+    """
     Test that there is a ValueError if the string passed in is not able to be conerted to a date
-    '''
+    """
     with pytest.raises(ValueError):
         visualize_program_progress(
             "not-a-real-date", "August 26, 2025", "June 30, 2026"
