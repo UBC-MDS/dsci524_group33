@@ -301,8 +301,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="our-grade-function" class="level3">
 <h3 class="anchored" data-anchor-id="our-grade-function">Our grade function</h3>
 <p>This function helps students estimate the minimum grades needed on remaining course components to finish with at least 60%.</p>
-<p>Inputs course_type (str) - Course grading scheme. Must be <code>"quiz"</code> or <code>"project"</code>. grades (dict) - Dictionary mapping completed component names to earned grades (0 - 100).</p>
-<p>Outputs</p>
+<p><strong>Inputs</strong> course_type (str) - Course grading scheme. Must be <code>"quiz"</code> or <code>"project"</code>. grades (dict) - Dictionary mapping completed component names to earned grades (0 - 100).</p>
+<p><strong>Outputs</strong></p>
 <p>Dictionary mapping each remaining component to the minimum grade required on that component to reach at least 60%.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.grade <span class="im">import</span> needed_to_pass</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> needed_to_pass(<span class="st">"quiz"</span>, {<span class="st">"lab1"</span>: <span class="dv">80</span>, <span class="st">"lab2"</span>: <span class="dv">70</span>, <span class="st">"quiz1"</span>: <span class="dv">60</span>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -311,9 +311,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="our-progress.visualize-function">Our progress.visualize function</h3>
 <p>This function visualizes program progress (in %) from a date to the capstone and program end date.</p>
 <p>Calculates the percentage of elapsed time between the program start date to the capstone start date and program end date of the UBC MDS program, and visualizes the result as a bar chart.</p>
-<p>Inputs:</p>
+<p><strong>Inputs</strong></p>
 <p>current_date (str or Python datetime object) - Date at which to visualize progress from. If None, defaults to today’s date. program_start_date (str or Python datetime object) - Start date of UBC MDS Program. If None, defaults to the configured start date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_start’]. program_end_date (str or Python datetime object) - End date of UBC MDS Program. If None, defaults to configured end date defined in config.py as PROGRAM_CONFIG_2025_2026[‘program_end’]. capstone_start_date (str or Python datetime object) - Start date of UBC MDS Capstone Project. If None, defaults to configured start date of the UBC MDS Capstone project in config.py as PROGRAM_CONFIG_2025_2026[‘capstone’][‘start’].</p>
-<p>Outputs:</p>
+<p><strong>Outputs</strong></p>
 <p>capstone_progress_percentage and completion_percentage. This function saves a bar chart visualizing progress toward the capstone and the end of the program. The figure is saved to the <code>img/</code> directory with the current date appended to the filename. The function also returns the proportion of progress that is left until the start of the capstone and the end of the program.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.progress <span class="im">import</span> visualize_program_progress</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> visualize_program_progress(</span>
@@ -326,9 +326,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="our-status-function" class="level3">
 <h3 class="anchored" data-anchor-id="our-status-function">Our status function</h3>
 <p>This function returns program status for a given date.</p>
-<p>Inputs:</p>
+<p><strong>Inputs</strong></p>
 <p>config (config.py) - Contains program date information, block structure, and break periods. date_input (str or Python datetime object) - Date at which program status is based upon. If None, defaults to today’s date.</p>
-<p>Outputs:</p>
+<p><strong>Outputs</strong></p>
 <p>Dictionary describing academic position based on date.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.status <span class="im">import</span> status</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="im">from</span> ubc_mds_helper.config <span class="im">import</span> PROGRAM_CONFIG_2025_2026</span>
