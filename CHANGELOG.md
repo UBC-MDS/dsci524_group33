@@ -15,3 +15,9 @@ Incorporated feedback in #73:
 
 - Reduced redundancy in the status.py function
 - Incorporate missing badges on README
+- Edit in function late_assignment
+- Add one more test for late_assignment
+- Deleted redundant test for late_assignment
+- Corrected typo in README.md
+- Additional description in CONTRIBUTING.md (Development tools and practices)
+
