@@ -134,13 +134,3 @@ def status(config, date_input=None):
         "next_break_name": next_break_name,
         "between_blocks": between_blocks,
     }
-
-
-# Test output of status()
-if __name__ == "__main__":
-    from .config import PROGRAM_CONFIG_2025_2026
-
-    output = status(PROGRAM_CONFIG_2025_2026)
-
-    for key, value in output.items():
-        print(f"{key}: {value}")
