@@ -7,8 +7,7 @@
 | Python version | [![Python](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/downloads/) |
 | Contributors | [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](CODE_OF_CONDUCT.md) |
 | Test coverage | [![codecov](https://codecov.io/github/UBC-MDS/dsci524_group33/graph/badge.svg?token=QXvJcWGDv6)](https://codecov.io/github/UBC-MDS/dsci524_group33) |
-| Package version (TestPyPI) | [![TestPyPI](https://img.shields.io/badge/test.pypi-v0.1.1-orange)](https://test.pypi.org/project/ubc-mds-helper/)
- |
+| Package version (TestPyPI) | [![TestPyPI](https://img.shields.io/badge/test.pypi-v0.1.1-orange)](https://test.pypi.org/project/ubc-mds-helper/) |
 
 ## Project Purpose
 
