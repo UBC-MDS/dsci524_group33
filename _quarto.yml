@@ -25,6 +25,8 @@ website:
             href: CONTRIBUTING.md
           - text: "Code of Conduct"
             href: CODE_OF_CONDUCT.md
+          - text: "README"
+            href: README.md
           - text: "Tutorial"
             href: tutorial.qmd
 
