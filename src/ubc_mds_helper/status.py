@@ -7,7 +7,6 @@ Date: January 9, 2026
 """
 
 from datetime import date, timedelta
-from .config import PROGRAM_CONFIG_2025_2026
 from .helper_functions import normalize_date
 
 
@@ -139,6 +138,8 @@ def status(config, date_input=None):
 
 # Test output of status()
 if __name__ == "__main__":
+    from .config import PROGRAM_CONFIG_2025_2026
+
     output = status(PROGRAM_CONFIG_2025_2026)
 
     for key, value in output.items():
