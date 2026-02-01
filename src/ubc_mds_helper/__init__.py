@@ -22,8 +22,23 @@
 # SOFTWARE.
 
 """
-Add a docstring here for the init module.
-
-This might include a very brief description of the package,
-its purpose, and any important notes.
+Expose functions from each module in src/ubc_mds_helper (from assessments.py, config.py, grade.py, helper_functions.py, progress.py, and status.py).
+Allows the user to import functions from src/ubc_mds_helper without knowing the internal file structure.
+Example: Instead of from ubc_mds_helper.grade import needed_to_pass, user can instead import:  from ubc_mds_helper import needed_to_pass
 """
+from .assessments import late_assignment
+from .config import PROGRAM_CONFIG_2025_2026
+from .grade import needed_to_pass
+from .helper_functions import normalize_date, progress_percentage
+from .progress import visualize_program_progress
+from .status import status
+
+__all__ = [
+    'late_assignment',
+    'PROGRAM_CONFIG_2025_2026',
+    'needed_to_pass',
+    'normalize_date',
+    'progress_percentage',
+    'visualize_program_progress',
+    'status'
+    ]
