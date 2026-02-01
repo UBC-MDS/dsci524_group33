@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Upcoming features and fixes
+- Final updated for Milestone 4 submission.
 
-## [0.1.0] - (1979-01-01)
+## [0.0.3] - (2026-01-31)
 
-- First release
+Incorporated feedback in #73:
+
+- Reduced redundancy in the status.py function
+- Incorporate missing badges on README
