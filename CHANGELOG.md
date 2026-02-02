@@ -24,3 +24,11 @@ Incorporated feedback in #73:
 Incorporated Feedback in #71.
 
 - (#102): Updated src/ubc_mds_helper/__init__.py to expose all functions in src/ubc_mds_helper to make it easier for users to import packages without knowing internal file structure of each submodule
+
+Incorporated feedback in #80
+
+- Add additional test in test_assessment
+- Add pip install instructions
+- Add input and outputs for functions in readme
+- Readme as homepage
+- Update test documentation in test_visualize_program_progress
