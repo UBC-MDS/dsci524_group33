@@ -6,6 +6,8 @@ https://github.com/UBC-MDS/dsci524_group33
 
 ## Release
 
+https://github.com/UBC-MDS/dsci524_group33/releases/tag/0.0.4
+
 ## Issue for License Choice
 
 https://github.com/UBC-MDS/dsci524_group33/issues/68
