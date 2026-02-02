@@ -21,3 +21,6 @@ Incorporated feedback in #73:
 - Corrected typo in README.md
 - Additional description in CONTRIBUTING.md (Development tools and practices)
 
+Incorporated Feedback in #71.
+
+- (#102): Updated src/ubc_mds_helper/__init__.py to expose all functions in src/ubc_mds_helper to make it easier for users to import packages without knowing internal file structure of each submodule
