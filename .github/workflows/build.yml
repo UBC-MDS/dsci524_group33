@@ -41,7 +41,7 @@ jobs:
         run: hatch run +py=${{ matrix.python-version }} test:run
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           files: ./coverage.xml
           flags: ${{ matrix.os }}-py${{ matrix.python-version }}
